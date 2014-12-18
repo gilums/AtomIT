@@ -1,0 +1,3 @@
+Temas a solucionar:
+
+1) Cuando estoy parado en el index de la pagina y hago click en el bton de atras del navegador, me muestra el login, esto no deberia suceder el login no se debe mostrar mas.
