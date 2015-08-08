@@ -3,13 +3,9 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Ciudades',
+	'Cuidades',
 );
 
-$this->menu=array(
-	array('label'=>'Create Ciudad', 'url'=>array('create')),
-	array('label'=>'Manage Ciudad', 'url'=>array('admin')),
-);
 
 ?>
 

@@ -78,6 +78,7 @@ return array(
 		// se agrega el componente de YiBooster
 		'booster'=>array(
 			'class'=> 'ext.booster.components.Booster',
+			'responsiveCss' => true, //Esto para que tengamos un diseño responsive, adaptable a cualquier dispositivo!
 		),
 
 		// uncomment the following to enable URLs in path-format
@@ -90,13 +91,43 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+		'widgetFactory' => array(
+            'widgets' => array(
+                'CLinkPager' => array(
+                    'htmlOptions' => array(
+                        'class' => 'pagination'
+                    ),
+                    'header' => false,
+                    'maxButtonCount' => 5,
+                    'cssFile' => false,
+                ),
+                'CGridView' => array(
+                    'htmlOptions' => array(
+                        'class' => 'table-responsive'
+                    ),
+                    'pagerCssClass' => 'dataTables_paginate paging_bootstrap',
+                    'itemsCssClass' => 'table table-striped table-hover',
+                    'cssFile' => false,
+                    'summaryCssClass' => 'dataTables_info',
+                    'summaryText' => 'Showing {start} to {end} of {count} entries',
+                    'template' => '{items}<div class="row"><div class="col-md-5 col-sm-12">{summary}</div><div class="col-md-7 col-sm-12">{pager}</div></div><br />',
+                ),
+            ),
+        ),
 		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
 		*/
 		// uncomment the following to use a MySQL database
-		
+		/*
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=db_atomit',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => '123456',
+			'charset' => 'utf8',
+		),*/
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=db_atomit',
 			'emulatePrepare' => true,
@@ -104,7 +135,7 @@ return array(
 			'password' => '123456',
 			'charset' => 'utf8',
 		),
-		
+
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',

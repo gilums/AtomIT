@@ -15,7 +15,7 @@ class CiudadController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			/*'postOnly + delete', // we only allow deletion via POST request*/
 		);
 	}
 
@@ -24,7 +24,7 @@ class CiudadController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
+		public function accessRules()
 	{
 		return array(
 			/*array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -41,7 +41,7 @@ class CiudadController extends Controller
 			),
 			/*
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('delete'),
 				'users'=>array('admin'),
 			),*/
 			array('deny',  // deny all users

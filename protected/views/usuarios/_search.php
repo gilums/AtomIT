@@ -6,34 +6,58 @@
 
 <div class="wide form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('booster.widgets.TbActiveForm', array(
+	'type' => 'inline',
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
+	
+	<?php echo $form->textFieldGroup(
+		$model,
+		'id',
+		array(
+			'wrapperHtmlOptions' => array(
+				'class' => 'col-sm-3',
+			),
+		)
+	); ?>
+	
+	<?php echo $form->textFieldGroup(
+		$model,
+		'nick',
+		array(
+			'wrapperHtmlOptions' => array(
+				'class' => 'col-sm-3',
+			),
+		)
+	); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+	<?php echo $form->datePickerGroup(
+			$model,
+			'fecha_creacion',
+			array(
+				'widgetOptions' => array(
+					'options' => array(
+						'language' => 'es',
+					),
+				),
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-sm-3',
+				),
+				//'hint' => 'Click inside! This is a super cool date field.',
+				//'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+			)
+		); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'nick'); ?>
-		<?php echo $form->textField($model,'nick',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
+	<?php $this->widget(
+		'booster.widgets.TbButton',
+		array(
+			'buttonType' => 'submit',
+			'context' => 'default',
+			'label' => 'Buscar'
+		)
+	); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'pass'); ?>
-		<?php echo $form->passwordField($model,'pass',array('size'=>20,'maxlength'=>20)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'fecha_creacion'); ?>
-		<?php echo $form->textField($model,'fecha_creacion'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
 
 <?php $this->endWidget(); ?>
 

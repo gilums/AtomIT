@@ -1212,7 +1212,7 @@ class TbActiveForm extends CActiveForm {
 		
 		echo CHtml::openTag('div', $groupOptions);
 
-		self::addCssClass($options['labelOptions'], 'col-sm-3 control-label');
+		self::addCssClass($options['labelOptions'], 'col-sm-2 control-label');
 		if (isset($options['label'])) {
 			if (!empty($options['label'])) {
 				echo CHtml::label($options['label'], CHtml::activeId($model, $attribute), $options['labelOptions']);

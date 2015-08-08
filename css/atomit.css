@@ -1,7 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Lobster|Pacifico|Damion|Gruppo);
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,500,600,300);
 
 body{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Dosis', sans-serif;
     font-weight: 300;
     font-size: 18px;
     background-color: #222;
@@ -156,7 +157,6 @@ body{
     -ms-border-radius:20px;
     -moz-border-radius:20px;
     -o-border-radius:20px;
-
     box-shadow: 0px 0px 4px #333333;
     -webkit-box-shadow:0px 0px 4px #333333;
     -moz-box-shadow:0px 0px 4px #333333;
@@ -166,7 +166,7 @@ body{
 }
 
 .login-titulo,.login-contenido{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Dosis', sans-serif;
     font-weight: 300;
     display: block;
     margin: auto;
@@ -190,4 +190,6 @@ body{
 .navbar-brand{
   color: #FFFFFF !important;
   background-color: #FF7B04;
+  font-family: 'Pacifico', cursive;
+  color: white !important;
 }
