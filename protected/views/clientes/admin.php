@@ -2,15 +2,14 @@
 /* @var $this ClientesController */
 /* @var $model Clientes */
 
-$this->breadcrumbs=array(
-	'Clientes'=>array('index'),
-	'Manage',
+$this->widget(
+    'booster.widgets.TbBreadcrumbs',
+    array(
+        'links' => array('Clientes' => 'index','Admin'), 
+    )
 );
 
-$this->menu=array(
-	array('label'=>'List Clientes', 'url'=>array('index')),
-	array('label'=>'Create Clientes', 'url'=>array('create')),
-);
+
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -26,36 +25,43 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Clientes</h1>
+<div class="panel panel-default">
+    <div class="panel-heading text-left">Administrador Clientes <a href="#" class="btn-link btn-sm search-button"><i class="fa fa-search"></i></a><a href="<?php echo Yii::app()->createAbsoluteUrl('usuarios/create'); ?>" class="btn-link btn-sm"><i class="fa fa-plus"></i></a></div>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+    <div class="panel-body admin">
+
+<?php #echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('booster.widgets.TbExtendedGridView', array(
 	'id'=>'clientes-grid',
+	'type' => 'condensed',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'nombre',
-		'rut',
-		'razon_social',
-		'direccion',
-		'email',
-		/*
-		'web',
-		'telefono',
-		'agencia',
-		'nota',
-		'id_barrio',
-		'fecha_creacion',
-		*/
-		array(
-			'class'=>'CButtonColumn',
+    'responsiveTable' => true,
+	'template' => "{items}{pager}",
+	#'filter'=>$model,
+	'columns'=>	array(
+			array('name'=>'id', 'header'=>'#', 'htmlOptions'=>array('style'=>'width: 60px')),
+			array('name'=>'nombre', 'header'=>'Nombre'),
+			array('name'=>'rut', 'header'=>'Rut'),
+			array('name'=>'razon_social', 'header'=>'Razón Social'),
+			array('name'=>'direccion', 'header'=>'Dirección'),
+			array('name'=>'email', 'header'=>'E-Mail'),
+            array('name'=>'fecha_creacion', 'header'=>'Fecha creacion'),
+			array(
+				'htmlOptions' => array('nowrap'=>'nowrap'),
+				'class'=>'booster.widgets.TbButtonColumn',
+                'deleteConfirmation'=>'Esta seguro que desea eliminar el usuario?',
+				'viewButtonUrl'=>'Yii::app()->createUrl("clientes/view", array("id"=>$data->id))',
+				'updateButtonUrl'=>'Yii::app()->createUrl("clientes/update", array("id"=>$data->id))',
+				'deleteButtonUrl'=>'Yii::app()->createUrl("clientes/delete", array("id"=>$data->id))',
+			),
 		),
-	),
+
 )); ?>
+    </div>
+<div>
