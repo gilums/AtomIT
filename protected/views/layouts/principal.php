@@ -12,7 +12,6 @@
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/atomit.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/responsive.css" />
@@ -148,11 +147,9 @@
         </div>
     </div>    
   <?php } ?>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/atomit.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-ui.js"></script>
-    <!--<script src="<?php #echo Yii::app()->request->baseUrl; ?>/js/jquery.js" type="text/javascript"></script>-->
+
+ <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/atomit.js',CClientScript::POS_END) ?>
+
     
 
 </body>

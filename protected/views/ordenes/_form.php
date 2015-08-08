@@ -4,9 +4,8 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form-horizontal" role="form">
-<?php $form = $this->beginWidget(
-	'booster.widgets.TbActiveForm',
+<div class="forml" role="form">
+<?php $form = $this->beginWidget('booster.widgets.TbActiveForm',
 	array(
 		'id' => 'ordenes-form',
 		'type' => 'horizontal',
@@ -83,15 +82,30 @@ if ($model->isNewRecord==false) {
 			</div>
 		</div>
 		<div class="col-lg-6">
-			<div class="form-group">
-				<div class="col-lg-3">
-					<?php echo $form->labelEx($model,'id_cliente'); ?>
+				<div class="form-group public_drop">
+					<div class="col-sm-3">
+						<?php echo $form->labelEx($model,'id_cliente'); ?>
+					</div>
+
+					
+					<div class="col-sm-8">		
+						<?php $this->widget(
+						    'booster.widgets.TbSelect2',
+						    array(
+						    	'model' => $model,
+						        'attribute' => 'id_cliente',
+						        'asDropDownList' => true,
+						        'data' => CHtml::listData(Clientes::model()->findAll(), 'id', 'nombre'),
+						        'options' => array(
+						            'placeholder' => 'Ingrese un cliente',
+						            'width' => '100%',
+						        )
+						       
+						    )
+						); ?>
+					</div>
 				</div>
-				<div class="col-lg-8">
-					<?php echo $form->dropDownList($model,'id_cliente', CHtml::listData(Clientes::model()->findAll(), 'id','nombre'),array('class'=>'form-control'));?>
-					<?php echo $form->error($model,'id_cliente'); ?>
-				</div>
-			</div>
+			
 			<div class="form-group">
 				<div class="col-lg-3">
 					<?php echo $form->labelEx($model,'falla'); ?>

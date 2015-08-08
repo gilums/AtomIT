@@ -86,7 +86,7 @@ class Booster extends CApplicationComponent {
 	/**
 	 * @var bool Whether to use minified CSS and Javascript files. Default to true.
 	 */
-	public $minify = true;
+	public $minify = false;
 
 	/**
 	 * @var boolean Whether to register YiiBooster custom CSS overrides
