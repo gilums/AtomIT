@@ -8,7 +8,9 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'AtomIT',
-
+    'language'=>'es',
+    'sourceLanguage'=>'en',
+    'charset'=>'utf-8',
 	// preloading 'log' component
 	'preload'=>array('log', 'booster'),
 
@@ -26,6 +28,9 @@ return array(
 			'password'=>'atomit2014',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+            'generatorPaths' => array(
+                'bootstrap.gii'
+             ),
 		),
 		
 	),
@@ -74,8 +79,13 @@ return array(
 			'allowAutoLogin'=>true,
 			'loginUrl'=>array('site/login'),
 		),
-
-		// se agrega el componente de YiBooster
+        
+        // se agrega el componente propio para los mensajes de la tabla historial
+        'Mensajes' => array(
+            'class'=>'ext.Mensajes'
+        ),
+        
+		// se agrega el componente de YiiBooster
 		'booster'=>array(
 			'class'=> 'ext.booster.components.Booster',
 			'responsiveCss' => true, //Esto para que tengamos un diseño responsive, adaptable a cualquier dispositivo!
@@ -134,6 +144,8 @@ return array(
 			'username' => 'root',
 			'password' => '123456',
 			'charset' => 'utf8',
+            'enableParamLogging' => true,
+            'enableProfiling' => true,
 		),
 
 		'errorHandler'=>array(
@@ -145,14 +157,13 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'error, warning, trace',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
 				array(
 					'class'=>'CWebLogRoute',
+                    'levels'=>'error, warning, info',
 				),
-				*/
+				
 			),
 		),
 	),

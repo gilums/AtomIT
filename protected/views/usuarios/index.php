@@ -12,13 +12,7 @@ $this->widget(
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#usuarios-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
+	$('.filters').toggle();
 	return false;
 });
 ");
@@ -29,22 +23,14 @@ $('.search-form form').submit(function(){
 <div class="panel panel-default">
     <div class="panel-heading text-left">Administrador Usuarios <a href="#" class="btn-link btn-sm search-button"><i class="fa fa-search"></i></a><a href="<?php echo Yii::app()->createAbsoluteUrl('usuarios/create'); ?>" class="btn-link btn-sm"><i class="fa fa-plus"></i></a></div>
 
-    <div class="panel-body admin">
-
-<?php #echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
+<div class="panel-body admin">
 <?php $this->widget('booster.widgets.TbExtendedGridView', array(
 	'id'=>'usuarios-grid',
 	'type' => 'condensed',
 	'dataProvider'=>$model->search(),
     'responsiveTable' => true,
 	'template' => "{items}{pager}",
-	#'filter'=>$model,
+	'filter'=>$model,
 	'columns'=>	array(
 			array('name'=>'id', 'header'=>'#', 'htmlOptions'=>array('style'=>'width: 60px')),
 			array('name'=>'nick', 'header'=>'Nick'),

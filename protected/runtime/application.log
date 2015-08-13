@@ -4985,3 +4985,243 @@ Stack trace:
 REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
 HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
 ---
+2015/08/13 23:39:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2".' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 00:28:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2".' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 00:28:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2".' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:29 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:29 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 00:31:30 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "user" application component
+2015/08/14 00:31:30 [trace] [system.CModule] Loading "session" application component
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.web.filters.CFilterChain] Running filter UsuariosController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (139)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (139)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:31:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\wamp\www\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\wamp\www\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\wamp\www\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\wamp\www\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\wamp\www\yii\framework\base\CApplication.php(458): CModule->getComponent('db')
+#4 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(2384): CActiveRecord->getDbConnection()
+#6 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Usuarios))
+#7 C:\wamp\www\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php(139): CActiveRecord->__construct('search')
+#9 C:\wamp\www\yii\framework\web\actions\CInlineAction.php(49): UsuariosController->actionIndex()
+#10 C:\wamp\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuarios/index')
+#20 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/AtomIT/usuarios/index
+HTTP_REFERER=http://localhost:90/AtomIT/
+---
+2015/08/14 00:31:33 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.web.filters.CFilterChain] Running filter UsuariosController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (139)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (139)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (139)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (139)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (146)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (146)
+2015/08/14 00:32:41 [trace] [system.db.ar.CActiveRecord] Usuarios.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 00:32:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `usuarios` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 00:32:41 [trace] [system.db.ar.CActiveRecord] Usuarios.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 00:32:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuarios` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 00:32:41 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 00:32:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 00:32:42 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "user" application component
+2015/08/14 00:32:42 [trace] [system.CModule] Loading "session" application component

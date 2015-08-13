@@ -5,12 +5,15 @@
  *
  * The followings are the available columns in table 'historial':
  * @property integer $id
- * @property string $fecha
- * @property integer $id_orden
+ * @property integer $id_usuario
+ * @property string $tipo
+ * @property string $estilo
+ * @property string $descripcion
+ * @property integer $visto
+ * @property string $fecha_creacion
  *
  * The followings are the available model relations:
- * @property Historial $idOrden
- * @property Historial[] $historials
+ * @property Usuarios $idUsuario
  */
 class Historial extends CActiveRecord
 {
@@ -30,12 +33,14 @@ class Historial extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_orden', 'required'),
-			array('id_orden', 'numerical', 'integerOnly'=>true),
-			array('fecha', 'safe'),
+			array('id_usuario', 'required'),
+			array('id_usuario, visto', 'numerical', 'integerOnly'=>true),
+			array('tipo, estilo', 'length', 'max'=>50),
+			array('descripcion', 'length', 'max'=>500),
+			array('fecha_creacion', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, fecha, id_orden', 'safe', 'on'=>'search'),
+			array('id, id_usuario, tipo, estilo, descripcion, visto, fecha_creacion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,8 +52,7 @@ class Historial extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idOrden' => array(self::BELONGS_TO, 'Historial', 'id_orden'),
-			'historials' => array(self::HAS_MANY, 'Historial', 'id_orden'),
+			'idUsuario' => array(self::BELONGS_TO, 'Usuarios', 'id_usuario'),
 		);
 	}
 
@@ -59,8 +63,12 @@ class Historial extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'fecha' => 'Fecha',
-			'id_orden' => 'Id Orden',
+			'id_usuario' => 'Id Usuario',
+			'tipo' => 'Tipo',
+			'estilo' => 'Estilo',
+			'descripcion' => 'Descripcion',
+			'visto' => 'Visto',
+			'fecha_creacion' => 'Fecha Creacion',
 		);
 	}
 
@@ -83,8 +91,12 @@ class Historial extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('fecha',$this->fecha,true);
-		$criteria->compare('id_orden',$this->id_orden);
+		$criteria->compare('id_usuario',$this->id_usuario);
+		$criteria->compare('tipo',$this->tipo,true);
+		$criteria->compare('estilo',$this->estilo,true);
+		$criteria->compare('descripcion',$this->descripcion,true);
+		$criteria->compare('visto',$this->visto);
+		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

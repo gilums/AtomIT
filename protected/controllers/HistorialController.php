@@ -1,6 +1,6 @@
 <?php
 
-class UsuariosController extends Controller
+class HistorialController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -15,7 +15,7 @@ class UsuariosController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			/*'postOnly + delete', // we only allow deletion via POST request*/
+			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -27,16 +27,16 @@ class UsuariosController extends Controller
 	public function accessRules()
 	{
 		return array(
-			/*array('allow',  // allow all users to perform 'index' and 'view' actions
+/*			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),*/
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','create','update','delete'),
+				'actions'=>array('admin','update','delete','index','view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -49,12 +49,12 @@ class UsuariosController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+/*	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}
+	}*/
 
 	/**
 	 * Creates a new model.
@@ -62,30 +62,23 @@ class UsuariosController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Usuarios;
-        $historial = new Historial;
-        
+		//$model=new Historial;
+
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Usuarios']))
+		if(isset($_POST['Historial']))
 		{
-			$model->attributes=$_POST['Usuarios'];
-            
-            $historial->id_usuario=Yii::app()->user->getId();
-			$historial->tipo="Create";
-			$historial->estilo="Success";
-			$historial->descripcion="Se creo el usuario de nick:" . $model->nick;
-            
+			$model->attributes=$_POST['Historial'];
 			if($model->save())
-                $historial->save();
-				$this->redirect(array('index'));
-				//$this->redirect(array('view','id'=>$model->id));
-		}
+				$this->redirect(array('admin'));
+		}else{
+            $this->redirect(array('admin'));
+        }
 
-		$this->render('create',array(
+/*		$this->render('create',array(
 			'model'=>$model,
-		));
+		));*/
 	}
 
 	/**
@@ -93,25 +86,24 @@ class UsuariosController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	/*public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Usuarios']))
+		if(isset($_POST['Historial']))
 		{
-			$model->attributes=$_POST['Usuarios'];
+			$model->attributes=$_POST['Historial'];
 			if($model->save())
-				$this->redirect(array('index'));
-				//$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
 		));
-	}
+	}*/
 
 	/**
 	 * Deletes a particular model.
@@ -124,7 +116,7 @@ class UsuariosController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**
@@ -132,43 +124,37 @@ class UsuariosController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*$dataProvider=new CActiveDataProvider('Usuarios');
+		$dataProvider=new CActiveDataProvider('Historial');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));*/
-		$model=new Usuarios('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Usuarios']))
-			$model->attributes=$_GET['Usuarios'];
-
-		$this->render('index',array(
-			'model'=>$model,
 		));
 	}
 
-	/*
+	/**
+	 * Manages all models.
+	 */
 	public function actionAdmin()
 	{
-		$model=new Usuarios('search');
+		$model=new Historial('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Usuarios']))
-			$model->attributes=$_GET['Usuarios'];
+		if(isset($_GET['Historial']))
+			$model->attributes=$_GET['Historial'];
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
-	*/
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Usuarios the loaded model
+	 * @return Historial the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Usuarios::model()->findByPk($id);
+		$model=Historial::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -176,11 +162,11 @@ class UsuariosController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Usuarios $model the model to be validated
+	 * @param Historial $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='usuarios-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='historial-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
