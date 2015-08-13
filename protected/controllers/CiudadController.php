@@ -15,7 +15,7 @@ class CiudadController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			/*'postOnly + delete', // we only allow deletion via POST request*/
+			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
 
@@ -30,11 +30,11 @@ class CiudadController extends Controller
 			/*array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update'),
-				'users'=>array('@'),
 			),*/
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('index','view','create','update','delete'),
+				'users'=>array('@'),
+			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('index','view','create','update','delete'),
 				'users'=>array('admin'),
