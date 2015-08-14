@@ -27,16 +27,16 @@ class OrdenesController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+/*			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),
+			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','index','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create','update','index','view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -64,10 +64,12 @@ class OrdenesController extends Controller
 	{
 		$model=new Ordenes;
 		$equipo=new Equipos;
+        $historial = new Historial;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		//$this->performAjaxValidation($model);
 		$this->performAjaxValidation(array ($model,$equipo)); 
+        
 		if(isset ($_POST['Equipos'])) 
 		{
 			$equipo->attributes=$_POST['Equipos'];
@@ -88,6 +90,11 @@ class OrdenesController extends Controller
 					$model->id_equipo=$equipo->id;
 					$model->fecha_ingreso=date('Y-m-d');
 					$model->attributes=$_POST['Ordenes'];
+                    
+                    $historial->id_usuario=Yii::app()->user->getId();
+                    $historial->tipo="Create";
+                    $historial->estilo="Success";
+                    $historial->descripcion="Creo la orden: " . $model->id;
 
 					if ($_POST['Ordenes']['finalizada']==true) {
 						$model->fecha_cierre=date('Y-m-d');
@@ -95,8 +102,10 @@ class OrdenesController extends Controller
 					if ($_POST['Ordenes']['transporte']=='Enviado' || $_POST['Ordenes']['transporte']=='Entregado') {
 						$model->fecha_retiro=date('Y-m-d');
 					}
-					if($model->save())
-						$this->redirect(array('index'));
+					if($model->save()){
+                        $historial->save();
+                        $this->redirect(array('index'));
+                    }
 				}
 			}
 		}
@@ -122,15 +131,24 @@ class OrdenesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+        $historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Ordenes']))
 		{
 			$model->attributes=$_POST['Ordenes'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Update";
+			$historial->estilo="Warning";
+			$historial->descripcion="Modifico la orden: " . $model->id;
+            
+			if($model->save()){
+                $historial->save()
+				$this->redirect(array('index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(
@@ -145,7 +163,15 @@ class OrdenesController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
+        
+        $historial = new Historial;
+		$historial->id_usuario=Yii::app()->user->getId();
+        $historial->tipo="Delete";
+        $historial->estilo="Error";
+		$historial->descripcion="Elimino la orden:" . $cpy->id;
+		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

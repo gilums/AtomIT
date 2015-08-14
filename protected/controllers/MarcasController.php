@@ -63,15 +63,24 @@ class MarcasController extends Controller
 	public function actionCreate()
 	{
 		$model=new Marcas;
-
+        $historial = new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Marcas']))
 		{
 			$model->attributes=$_POST['Marcas'];
-			if($model->save())
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Create";
+			$historial->estilo="Success";
+			$historial->descripcion="Creo la marca:" . $model->nombre;
+            
+			if($model->save()){
+                $historial->save();
 				$this->redirect(array('index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -87,15 +96,26 @@ class MarcasController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+        $historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Marcas']))
 		{
 			$model->attributes=$_POST['Marcas'];
-			if($model->save())
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Update";
+			$historial->estilo="Warning";
+			$historial->descripcion="Modifico la marca:" . $model->nombre;
+            
+            
+			if($model->save()){
+                $historial->save();
+                //Yii::app()->user->setFlash('info', "<strong>Modificación!</strong> Se modifico el usuario correctamente");
 				$this->redirect(array('index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(
@@ -110,7 +130,15 @@ class MarcasController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
+        
+        $historial = new Historial;
+		$historial->id_usuario=Yii::app()->user->getId();
+        $historial->tipo="Delete";
+        $historial->estilo="Error";
+		$historial->descripcion="Elimino la marca:" . $cpy->nombre;
+		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

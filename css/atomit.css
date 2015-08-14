@@ -1585,3 +1585,9 @@ button,
     margin-right: 30px;
     margin: 0 auto !important;
 }
+
+
+/*---------------- GRID VIEW ------------------*/
+.grid-view{
+    padding-top: 0px !important;
+} 

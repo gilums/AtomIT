@@ -31,10 +31,10 @@ class CiudadController extends Controller
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),*/
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+/*			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('index','view','create','update','delete'),
 				'users'=>array('@'),
-			),
+			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('index','view','create','update','delete'),
 				'users'=>array('admin'),
@@ -68,16 +68,25 @@ class CiudadController extends Controller
 	public function actionCreate()
 	{
 		$model=new Ciudad;
+        $historial=new Historial;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Ciudad']))
 		{
 			$model->attributes=$_POST['Ciudad'];
-			if($model->save())
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Create";
+			$historial->estilo="Success";
+			$historial->descripcion="Creo la ciudad:" . $model->nombre;
+            
+			if($model->save()){
+                $historial->save();
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -93,16 +102,25 @@ class CiudadController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+        $historial=new Historial;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Ciudad']))
 		{
 			$model->attributes=$_POST['Ciudad'];
-			if($model->save())
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Update";
+			$historial->estilo="Warning";
+			$historial->descripcion="Modifico la ciudad:" . $model->nombre;
+            
+			if($model->save()){
+                $historial->save();
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(
@@ -117,7 +135,15 @@ class CiudadController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+        $cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
+        
+        $historial = new Historial;
+		$historial->id_usuario=Yii::app()->user->getId();
+        $historial->tipo="Delete";
+        $historial->estilo="Error";
+		$historial->descripcion="Elimino la ciudad:" . $cpy->nombre;
+		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

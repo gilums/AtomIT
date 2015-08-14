@@ -27,16 +27,16 @@ class ClientesController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+/*			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),
+			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('index','view','create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','view','index','create','update','admin'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -63,15 +63,23 @@ class ClientesController extends Controller
 	public function actionCreate()
 	{
 		$model=new Clientes;
-
+        $historial = new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Clientes']))
 		{
 			$model->attributes=$_POST['Clientes'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Create";
+			$historial->estilo="Success";
+			$historial->descripcion="Creo el cliente:" . $model->nombre;
+            
+			if($model->save()){
+                $historial->save();
+				$this->redirect(array('index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -87,15 +95,24 @@ class ClientesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+        $historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Clientes']))
 		{
 			$model->attributes=$_POST['Clientes'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Update";
+			$historial->estilo="Warning";
+			$historial->descripcion="Modifico el cliente:" . $model->nombre;
+            
+			if($model->save()){
+                $historial->save();
+				$this->redirect(array('index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(
@@ -110,7 +127,15 @@ class ClientesController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
+        
+        $historial = new Historial;
+		$historial->id_usuario=Yii::app()->user->getId();
+        $historial->tipo="Delete";
+        $historial->estilo="Error";
+		$historial->descripcion="Elimino el cliente:" . $cpy->nombre;
+		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

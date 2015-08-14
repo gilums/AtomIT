@@ -27,16 +27,16 @@ class EquiposController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+/*			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),
+			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','index','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','create','update','index','view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -63,15 +63,24 @@ class EquiposController extends Controller
 	public function actionCreate()
 	{
 		$model=new Equipos;
-
+        $historial = new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Equipos']))
 		{
 			$model->attributes=$_POST['Equipos'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Create";
+			$historial->estilo="Success";
+			$historial->descripcion="Creo el equipo:" . $model->modelo;
+            
+			if($model->save()){
+                $historial->save();
+				$this->redirect(array('index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -87,15 +96,26 @@ class EquiposController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+        $historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Equipos']))
 		{
 			$model->attributes=$_POST['Equipos'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Update";
+			$historial->estilo="Warning";
+			$historial->descripcion="Modifico el equipo:" . $model->modelo;
+            
+            
+			if($model->save()){
+                $historial->save();
+                //Yii::app()->user->setFlash('info', "<strong>Modificación!</strong> Se modifico el usuario correctamente");
+				$this->redirect(array('index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(
@@ -110,7 +130,15 @@ class EquiposController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
+        
+        $historial = new Historial;
+		$historial->id_usuario=Yii::app()->user->getId();
+        $historial->tipo="Delete";
+        $historial->estilo="Error";
+		$historial->descripcion="Elimino el equipo:" . $cpy->modelo;
+		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

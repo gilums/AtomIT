@@ -5225,3 +5225,1144 @@ HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.
 2015/08/14 00:32:42 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
 2015/08/14 00:32:42 [trace] [system.CModule] Loading "user" application component
 2015/08/14 00:32:42 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.web.filters.CFilterChain] Running filter UsuariosController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:14 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+2015/08/14 02:00:15 [trace] [system.db.ar.CActiveRecord] Usuarios.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:00:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `usuarios` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:00:15 [trace] [system.db.ar.CActiveRecord] Usuarios.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:00:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuarios` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:00:15 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:00:15 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.web.filters.CFilterChain] Running filter ClientesController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+2015/08/14 02:00:18 [trace] [system.db.ar.CActiveRecord] Clientes.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `clientes` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:18 [trace] [system.db.ar.CActiveRecord] Clientes.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `clientes` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:18 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:00:19 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:00:19 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.web.filters.CFilterChain] Running filter ClientesController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+2015/08/14 02:00:23 [trace] [system.db.ar.CActiveRecord] Clientes.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `clientes` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:23 [trace] [system.db.ar.CActiveRecord] Clientes.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:23 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `clientes` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:00:23 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:00:23 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.web.filters.CFilterChain] Running filter UsuariosController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+2015/08/14 02:02:02 [trace] [system.db.ar.CActiveRecord] Usuarios.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:02:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `usuarios` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:02:02 [trace] [system.db.ar.CActiveRecord] Usuarios.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:02:02 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuarios` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:02:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:02:02 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:02:02 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.web.filters.CFilterChain] Running filter UsuariosController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+2015/08/14 02:03:18 [trace] [system.db.ar.CActiveRecord] Usuarios.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `usuarios` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:18 [trace] [system.db.ar.CActiveRecord] Usuarios.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuarios` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:18 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:03:19 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:03:19 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.web.filters.CFilterChain] Running filter ClientesController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+2015/08/14 02:03:21 [trace] [system.db.ar.CActiveRecord] Clientes.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `clientes` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:21 [trace] [system.db.ar.CActiveRecord] Clientes.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `clientes` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:03:21 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:03:21 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.web.filters.CFilterChain] Running filter UsuariosController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuarios`
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (158)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\UsuariosController.php (165)
+2015/08/14 02:03:30 [trace] [system.db.ar.CActiveRecord] Usuarios.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `usuarios` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:30 [trace] [system.db.ar.CActiveRecord] Usuarios.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuarios` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\usuarios\index.php (49)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:03:30 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:03:30 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.web.filters.CFilterChain] Running filter ClientesController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `clientes`
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (136)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbBreadcrumbs.php (49)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (10)
+in C:\wamp\www\AtomIT\protected\controllers\ClientesController.php (143)
+2015/08/14 02:03:35 [trace] [system.db.ar.CActiveRecord] Clientes.count()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `clientes` `t`
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:35 [trace] [system.db.ar.CActiveRecord] Clientes.findAll()
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `clientes` `t` LIMIT 10
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbGridView.php (68)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (234)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "format" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (632)
+in C:\wamp\www\AtomIT\protected\extensions\booster\widgets\TbExtendedGridView.php (244)
+in C:\wamp\www\AtomIT\protected\views\clientes\admin.php (53)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:03:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:03:35 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:03:35 [trace] [system.CModule] Loading "session" application component
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 02:04:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "cuidad/index"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('cuidad/index')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/cuidad/index
+HTTP_REFERER=http://localhost:90/AtomIT/clientes/admin
+---
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 02:04:03 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "user" application component
+2015/08/14 02:04:03 [trace] [system.CModule] Loading "session" application component
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 03:16:44 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "user" application component
+2015/08/14 03:16:44 [trace] [system.CModule] Loading "session" application component
+2015/08/14 03:16:46 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:46 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:46 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:46 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:46 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:46 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:46 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:46 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (30)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (103)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:47 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (36)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (103)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (30)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (103)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:50 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (36)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (103)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.db.ar.CActiveRecord] Usuarios.find()
+in C:\wamp\www\AtomIT\protected\components\UserIdentity.php (26)
+in C:\wamp\www\AtomIT\protected\models\LoginForm.php (54)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "db" application component
+in C:\wamp\www\AtomIT\protected\components\UserIdentity.php (26)
+in C:\wamp\www\AtomIT\protected\models\LoginForm.php (54)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+2015/08/14 03:16:55 [trace] [system.db.CDbConnection] Opening DB connection
+in C:\wamp\www\AtomIT\protected\components\UserIdentity.php (26)
+in C:\wamp\www\AtomIT\protected\models\LoginForm.php (54)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+2015/08/14 03:16:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `usuarios`
+in C:\wamp\www\AtomIT\protected\components\UserIdentity.php (26)
+in C:\wamp\www\AtomIT\protected\models\LoginForm.php (54)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+2015/08/14 03:16:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `usuarios`
+in C:\wamp\www\AtomIT\protected\components\UserIdentity.php (26)
+in C:\wamp\www\AtomIT\protected\models\LoginForm.php (54)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+2015/08/14 03:16:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `usuarios` `t` WHERE LOWER(nick)=? LIMIT 1. Bound with 0='admin'
+in C:\wamp\www\AtomIT\protected\components\UserIdentity.php (26)
+in C:\wamp\www\AtomIT\protected\models\LoginForm.php (54)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/e81c69bb...')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\AtomIT\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/AtomIT/assets/e81c69bb/bootstrap/fonts/glyphicons-halflings-regular.woff2
+HTTP_REFERER=http://localhost:90/AtomIT/assets/e81c69bb/bootstrap/css/bootstrap.css
+---
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "errorHandler" application component
+2015/08/14 03:16:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/08/14 03:16:55 [trace] [system.CModule] Loading "user" application component
+2015/08/14 03:16:56 [trace] [system.CModule] Loading "session" application component
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (30)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (103)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:16:58 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (36)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (103)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:17:02 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/14 03:17:02 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)

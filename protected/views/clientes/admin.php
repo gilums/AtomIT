@@ -13,16 +13,11 @@ $this->widget(
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#clientes-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
+	$('.filters').toggle();
 	return false;
 });
 ");
+?>
 ?>
 
 <div class="panel panel-default">
@@ -30,20 +25,13 @@ $('.search-form form').submit(function(){
 
     <div class="panel-body admin">
 
-<?php #echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
 <?php $this->widget('booster.widgets.TbExtendedGridView', array(
 	'id'=>'clientes-grid',
 	'type' => 'condensed',
 	'dataProvider'=>$model->search(),
     'responsiveTable' => true,
 	'template' => "{items}{pager}",
-	#'filter'=>$model,
+	'filter'=>$model,
 	'columns'=>	array(
 			array('name'=>'id', 'header'=>'#', 'htmlOptions'=>array('style'=>'width: 60px')),
 			array('name'=>'nombre', 'header'=>'Nombre'),
@@ -55,7 +43,7 @@ $('.search-form form').submit(function(){
 			array(
 				'htmlOptions' => array('nowrap'=>'nowrap'),
 				'class'=>'booster.widgets.TbButtonColumn',
-                'deleteConfirmation'=>'Esta seguro que desea eliminar el usuario?',
+                'deleteConfirmation'=>'Esta seguro que desea eliminar el cliente?',
 				'viewButtonUrl'=>'Yii::app()->createUrl("clientes/view", array("id"=>$data->id))',
 				'updateButtonUrl'=>'Yii::app()->createUrl("clientes/update", array("id"=>$data->id))',
 				'deleteButtonUrl'=>'Yii::app()->createUrl("clientes/delete", array("id"=>$data->id))',

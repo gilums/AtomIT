@@ -63,16 +63,24 @@ class AccesoriosController extends Controller
 	public function actionCreate()
 	{
 		$model=new Accesorios;
-
+        $historial = new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Accesorios']))
 		{
 			$model->attributes=$_POST['Accesorios'];
-			if($model->save())
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Create";
+			$historial->estilo="Success";
+			$historial->descripcion="Creo el accesorio:" . $model->nombre;
+            
+			if($model->save()){
+                $historial->save();
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('create',array(
@@ -88,16 +96,25 @@ class AccesoriosController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+        $historial= new Historial;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Accesorios']))
 		{
 			$model->attributes=$_POST['Accesorios'];
-			if($model->save())
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Update";
+			$historial->estilo="Warning";
+			$historial->descripcion="Modifico el accesorio:" . $model->nombre;
+            
+			if($model->save()){
+                $historial->save();
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }
 		}
 
 		$this->render('update',array(
@@ -112,7 +129,15 @@ class AccesoriosController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+        $cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
+        
+        $historial = new Historial;
+		$historial->id_usuario=Yii::app()->user->getId();
+        $historial->tipo="Delete";
+        $historial->estilo="Error";
+		$historial->descripcion="Elimino el accesorio:" . $cpy->nombre;
+		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
