@@ -74,7 +74,7 @@ class EquiposController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
-			$historial->descripcion="Creo el equipo:" . $model->modelo;
+			$historial->descripcion="Creo el equipo: " . $model->modelo;
             
 			if($model->save()){
                 $historial->save();
@@ -107,7 +107,7 @@ class EquiposController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
-			$historial->descripcion="Modifico el equipo:" . $model->modelo;
+			$historial->descripcion="Modifico el equipo: " . $model->modelo;
             
             
 			if($model->save()){
@@ -137,7 +137,7 @@ class EquiposController extends Controller
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
         $historial->estilo="Error";
-		$historial->descripcion="Elimino el equipo:" . $cpy->modelo;
+		$historial->descripcion="Elimino el equipo: " . $cpy->modelo;
 		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

@@ -75,7 +75,7 @@ class UsuariosController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
-			$historial->descripcion="Creo el usuario:" . $model->nick;
+			$historial->descripcion="Creo el usuario: " . $model->nick;
             
 			if($model->save()){
                 $historial->save();
@@ -108,7 +108,7 @@ class UsuariosController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
-			$historial->descripcion="Modifico el usuario:" . $model->nick;
+			$historial->descripcion="Modifico el usuario: " . $model->nick;
             
             
 			if($model->save()){
@@ -138,7 +138,7 @@ class UsuariosController extends Controller
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
         $historial->estilo="Error";
-		$historial->descripcion="Elimino el usuario:" . $cpy->nick;
+		$historial->descripcion="Elimino el usuario: " . $cpy->nick;
 		$historial->save();
         
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

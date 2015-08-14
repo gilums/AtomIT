@@ -36,7 +36,7 @@ class ClientesController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','view','index','create','update','admin'),
+				'actions'=>array('admin','delete','view','index','create','update'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -73,7 +73,7 @@ class ClientesController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
-			$historial->descripcion="Creo el cliente:" . $model->nombre;
+			$historial->descripcion="Creo el cliente: " . $model->nombre;
             
 			if($model->save()){
                 $historial->save();
@@ -106,7 +106,7 @@ class ClientesController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
-			$historial->descripcion="Modifico el cliente:" . $model->nombre;
+			$historial->descripcion="Modifico el cliente: " . $model->nombre;
             
 			if($model->save()){
                 $historial->save();
@@ -134,7 +134,7 @@ class ClientesController extends Controller
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
         $historial->estilo="Error";
-		$historial->descripcion="Elimino el cliente:" . $cpy->nombre;
+		$historial->descripcion="Elimino el cliente: " . $cpy->nombre;
 		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

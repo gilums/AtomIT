@@ -80,7 +80,7 @@ class CiudadController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
-			$historial->descripcion="Creo la ciudad:" . $model->nombre;
+			$historial->descripcion="Creo la ciudad: " . $model->nombre;
             
 			if($model->save()){
                 $historial->save();
@@ -114,7 +114,7 @@ class CiudadController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
-			$historial->descripcion="Modifico la ciudad:" . $model->nombre;
+			$historial->descripcion="Modifico la ciudad: " . $model->nombre;
             
 			if($model->save()){
                 $historial->save();
@@ -142,7 +142,7 @@ class CiudadController extends Controller
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
         $historial->estilo="Error";
-		$historial->descripcion="Elimino la ciudad:" . $cpy->nombre;
+		$historial->descripcion="Elimino la ciudad: " . $cpy->nombre;
 		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

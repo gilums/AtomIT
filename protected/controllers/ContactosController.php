@@ -74,7 +74,7 @@ class ContactosController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
-			$historial->descripcion="Creo el contacto:" . $model->nombre ." ".$model->apellido;
+			$historial->descripcion="Creo el contacto: " . $model->nombre ." ".$model->apellido;
             
 			if($model->save()){
                 $historial->save();
@@ -107,7 +107,7 @@ class ContactosController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
-			$historial->descripcion="Modifico el contacto:" . $model->nombre ." ".$model->apellido;
+			$historial->descripcion="Modifico el contacto: " . $model->nombre ." ".$model->apellido;
             
 			if($model->save()){
                 $historial->save();
@@ -135,7 +135,7 @@ class ContactosController extends Controller
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
         $historial->estilo="Error";
-		$historial->descripcion="Elimino el contacto" . $cpy->nombre ." ".$cpy->apellido;
+		$historial->descripcion="Elimino el contacto: " . $cpy->nombre ." ".$cpy->apellido;
 		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

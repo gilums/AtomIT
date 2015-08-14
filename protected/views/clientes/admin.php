@@ -21,7 +21,7 @@ $('.search-button').click(function(){
 ?>
 
 <div class="panel panel-default">
-    <div class="panel-heading text-left">Administrador Clientes <a href="#" class="btn-link btn-sm search-button"><i class="fa fa-search"></i></a><a href="<?php echo Yii::app()->createAbsoluteUrl('usuarios/create'); ?>" class="btn-link btn-sm"><i class="fa fa-plus"></i></a></div>
+    <div class="panel-heading text-left">Administrador Clientes <a href="#" class="btn-link btn-sm search-button"><i class="fa fa-search"></i></a><a href="<?php echo Yii::app()->createAbsoluteUrl('clientes/create'); ?>" class="btn-link btn-sm"><i class="fa fa-plus"></i></a></div>
 
     <div class="panel-body admin">
 

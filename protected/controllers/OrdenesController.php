@@ -170,7 +170,7 @@ class OrdenesController extends Controller
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
         $historial->estilo="Error";
-		$historial->descripcion="Elimino la orden:" . $cpy->id;
+		$historial->descripcion="Elimino la orden: " . $cpy->id;
 		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

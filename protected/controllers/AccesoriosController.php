@@ -74,7 +74,7 @@ class AccesoriosController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
-			$historial->descripcion="Creo el accesorio:" . $model->nombre;
+			$historial->descripcion="Creo el accesorio: " . $model->nombre;
             
 			if($model->save()){
                 $historial->save();
@@ -108,7 +108,7 @@ class AccesoriosController extends Controller
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
-			$historial->descripcion="Modifico el accesorio:" . $model->nombre;
+			$historial->descripcion="Modifico el accesorio: " . $model->nombre;
             
 			if($model->save()){
                 $historial->save();
@@ -136,7 +136,7 @@ class AccesoriosController extends Controller
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
         $historial->estilo="Error";
-		$historial->descripcion="Elimino el accesorio:" . $cpy->nombre;
+		$historial->descripcion="Elimino el accesorio: " . $cpy->nombre;
 		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
