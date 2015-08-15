@@ -78,8 +78,11 @@ class ContactosController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Success ', 'Se creo correctamente el contacto');
 				$this->redirect(array('index');
 				//$this->redirect(array('view','id'=>$model->id));
+            else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear contacto');
             }
 		}
 
@@ -111,8 +114,11 @@ class ContactosController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente el contacto');
 				$this->redirect(array('view','id'=>$model->id));
 				//his->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar contacto');
             }
 		}
 

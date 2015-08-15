@@ -20,4 +20,10 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+    
+    
+    public static function setMsg($title = '', $msg = '') {
+        //yii::app()->user->setFlash(str_replace(array("'", '"'), array('`', '\"'), $title), str_replace(array("'", '"'), array('`', '\"'), $msg));
+        yii::app()->user->setFlash(str_replace(array("'"), array('`'), $title), str_replace(array("'"), array('`'), $msg));
+    }
 }

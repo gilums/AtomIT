@@ -24,7 +24,7 @@ class CiudadController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-		public function accessRules()
+	public function accessRules()
 	{
 		return array(
 			/*array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -84,8 +84,11 @@ class CiudadController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Success ', 'Se creo correctamente la ciudad');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear ciudad');
             }
 		}
 
@@ -118,8 +121,11 @@ class CiudadController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente la ciudad');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar ciudad');
             }
 		}
 

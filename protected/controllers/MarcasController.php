@@ -78,8 +78,11 @@ class MarcasController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Success ', 'Se creo correctamente la marca');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear la marca');
             }
 		}
 
@@ -112,9 +115,12 @@ class MarcasController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente la marca');
                 //Yii::app()->user->setFlash('info', "<strong>Modificación!</strong> Se modifico el usuario correctamente");
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar la marca');
             }
 		}
 

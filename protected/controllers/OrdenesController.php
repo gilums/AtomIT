@@ -104,7 +104,10 @@ class OrdenesController extends Controller
 					}
 					if($model->save()){
                         $historial->save();
+                        Yii::app()->user->setFlash('Success', 'Se creo correctamente la orden');
                         $this->redirect(array('index'));
+                    }else{
+                        Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear orden');
                     }
 				}
 			}
@@ -145,9 +148,12 @@ class OrdenesController extends Controller
 			$historial->descripcion="Modifico la orden: " . $model->id;
             
 			if($model->save()){
-                $historial->save()
+                $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente la orden');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear orden');
             }
 		}
 

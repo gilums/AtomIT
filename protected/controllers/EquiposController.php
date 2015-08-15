@@ -32,11 +32,11 @@ class EquiposController extends Controller
 				'users'=>array('*'),
 			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','index','view'),
+				'actions'=>array('update','index','view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','update','index','view'),
+				'actions'=>array('delete','update','index','view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -60,7 +60,7 @@ class EquiposController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+/*	public function actionCreate()
 	{
 		$model=new Equipos;
         $historial = new Historial;
@@ -86,7 +86,7 @@ class EquiposController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
-	}
+	}*/
 
 	/**
 	 * Updates a particular model.
@@ -112,9 +112,11 @@ class EquiposController extends Controller
             
 			if($model->save()){
                 $historial->save();
-                //Yii::app()->user->setFlash('info', "<strong>Modificación!</strong> Se modifico el usuario correctamente");
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente el equipo');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar equipo');
             }
 		}
 
@@ -150,17 +152,6 @@ class EquiposController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Equipos');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
 		$model=new Equipos('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Equipos']))
@@ -170,6 +161,21 @@ class EquiposController extends Controller
 			'model'=>$model,
 		));
 	}
+
+	/**
+	 * Manages all models.
+	 */
+/*	public function actionAdmin()
+	{
+		$model=new Equipos('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Equipos']))
+			$model->attributes=$_GET['Equipos'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}*/
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

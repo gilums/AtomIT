@@ -27,6 +27,7 @@
 </head>
 
 <body class="nav-md">
+ 
   <?php if(!Yii::app()->user->isGuest){ ?>
 
     <div class="container contenedor-total body">
@@ -102,7 +103,7 @@
                                 </li>
                                 <li><a><i class="fa fa-bar-chart-o"></i> Charts <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="chart.html">Chart JS</a>
+                                        <li><a href="#">Chart JS</a>
                                         </li>
                                         <li><a href="#">Chart JS2</a>
                                         </li>
@@ -119,8 +120,8 @@
                         <a data-toggle="tooltip" data-placement="top" title="Settings">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        <a href="<?php echo Yii::app()->createUrl('/historial/index'); ?>" data-toggle="tooltip" data-placement="top" title="Historial">
+                            <span class="fa fa-history" aria-hidden="true"></span>
                         </a>
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
@@ -173,6 +174,23 @@
 
             <!-- page content -->
             <div class="right_col" role="main">
+                <?php $this->widget('ext.Hzl.toastr.HzlToastr', array(
+                            'flashMessagesOnly'=> false,
+                            'options' => array(
+                                "closeButton" => true,
+                                "positionClass" => "toast-bottom-right",
+                                "showDuration" => "300",
+                                "hideDuration" => "1000",
+                                "timeOut" => "15000",
+                                "extendedTimeOut" => "1000",
+                                "showEasing" => "swing",
+                                "hideEasing" => "linear",
+                                "showMethod" => "fadeIn",
+                                "hideMethod" => "fadeOut"
+                            )
+                        ));
+                ?>
+                
                 <?php echo $content; ?>
             </div>
             <!-- /page content -->
@@ -191,6 +209,7 @@
   <?php } ?>
 
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/nicescroll/jquery.nicescroll.min.js',CClientScript::POS_END) ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/bootstrap-notify.js',CClientScript::POS_END) ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/atomit.js',CClientScript::POS_END) ?>
 
     

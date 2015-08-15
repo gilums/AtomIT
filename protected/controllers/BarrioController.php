@@ -84,8 +84,11 @@ class BarrioController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Success ', 'Se creo correctamente el barrio');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear barrio');
             }
 		}
 
@@ -118,8 +121,11 @@ class BarrioController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente el barrio');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar barrio');
             }
 		}
 

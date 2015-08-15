@@ -83,8 +83,11 @@ class DepartamentoController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Success ', 'Se creo correctamente el departamento');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear departamento');
             }
 		}
 
@@ -117,9 +120,12 @@ class DepartamentoController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente el departamento');
                 //Yii::app()->user->setFlash('info', "<strong>Modificación!</strong> Se modifico el usuario correctamente");
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar departamento');
             }
 		}
 

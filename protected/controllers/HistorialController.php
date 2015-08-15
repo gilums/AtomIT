@@ -36,7 +36,7 @@ class HistorialController extends Controller
 				'users'=>array('@'),
 			),*/
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','update','delete','index','view'),
+				'actions'=>array('index','update','delete','view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -49,18 +49,18 @@ class HistorialController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-/*	public function actionView($id)
+	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}*/
+	}
 
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+/*	public function actionCreate()
 	{
 		//$model=new Historial;
 
@@ -76,10 +76,10 @@ class HistorialController extends Controller
             $this->redirect(array('admin'));
         }
 
-/*		$this->render('create',array(
+		$this->render('create',array(
 			'model'=>$model,
-		));*/
-	}
+		));
+	}*/
 
 	/**
 	 * Updates a particular model.
@@ -116,7 +116,7 @@ class HistorialController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}
 
 	/**
@@ -124,16 +124,20 @@ class HistorialController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Historial');
+		$model=new Historial('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Historial']))
+			$model->attributes=$_GET['Historial'];
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+/*	public function actionAdmin()
 	{
 		$model=new Historial('search');
 		$model->unsetAttributes();  // clear any default values
@@ -143,7 +147,7 @@ class HistorialController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
-	}
+	}*/
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

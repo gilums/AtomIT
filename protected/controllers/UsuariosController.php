@@ -79,8 +79,13 @@ class UsuariosController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Success ', 'Se creo correctamente el usuario');
+                //Yii::app()->user->setFlash('success', '<strong>Success!!</strong> el usuario se creo correctamente');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }
+            else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear usuario');
             }
 		}
 
@@ -113,9 +118,12 @@ class UsuariosController extends Controller
             
 			if($model->save()){
                 $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente el usuario');
                 //Yii::app()->user->setFlash('info', "<strong>Modificación!</strong> Se modifico el usuario correctamente");
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar usuario');
             }
 		}
 
@@ -142,8 +150,12 @@ class UsuariosController extends Controller
 		$historial->save();
         
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
+		if(!isset($_GET['ajax'])){
+             Yii::app()->user->setFlash('Warning', 'Se elimino correctamente el usuario');
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+        }else{
+             Yii::app()->user->setFlash('Warning', 'Se elimino correctamente el usuario');
+        }
 	}
 
 	/**
