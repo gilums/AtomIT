@@ -1,0 +1,195 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster|Pacifico|Damion|Gruppo);
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,500,600,300);
+
+body{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    background-color: #222;
+    margin-top: 100px;
+}
+
+.borde{
+  border: 1px solid red;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+#contenedor_web {
+    padding-left: 0;
+}
+
+#contenedor_web_contenido {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #contenedor_web{
+        padding-left: 225px;
+    }
+
+    #contenedor_web_contenido {
+        padding: 10px;
+    }
+}
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #FF7900;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #FF7B04;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #FF7B04;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+    color: #FFFFFF;
+}
+
+.top-nav>.open>.dropdown-menu>li>a:hover {
+    color: #000000;
+}
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        color: #FF7B04 !important;
+    }
+    
+    .side-nav>.open{
+      color: white;
+      background-color: black;
+    }
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        color: #FEFEFE !important;
+        background-color: #FF7B04 !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+    background-color: #FF7B04; 
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #000000 !important;
+}
+
+.login{
+    height: 100%;
+    background: url(../img/35.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login_container{
+    vertical-align: middle;
+    background: rgba(145,133,111,0.4);
+    height: 350px;
+
+    /*
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid #FE6601;    
+    width: 600px;
+    border-radius: 20px;
+    -webkit-border-radius:20px;
+    -ms-border-radius:20px;
+    -moz-border-radius:20px;
+    -o-border-radius:20px;
+    box-shadow: 0px 0px 4px #333333;
+    -webkit-box-shadow:0px 0px 4px #333333;
+    -moz-box-shadow:0px 0px 4px #333333;
+    -ms-box-shadow:0px 0px 4px #333333;
+    -o-box-shadow:0px 0px 4px #333333; 
+    */
+}
+
+.login-titulo,.login-contenido{
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    color: white;
+}
+.login-titulo{
+    margin-top: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.login-contenido{
+    width: 50%;
+    height: 100%;
+    /*background: rgba(254,102,1,0.4);*/
+}
+.centrar{
+    margin-right: 30px;
+    margin: 0 auto !important;
+}
+.navbar-brand{
+  color: #FFFFFF !important;
+  background-color: #FF7B04;
+  font-family: 'Pacifico', cursive;
+  color: white !important;
+}

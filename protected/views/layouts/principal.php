@@ -1,0 +1,221 @@
+<?php /* @var $this Controller */ ?>
+<!DOCTYPE html">
+<html lang="es">
+<head>
+
+    <!-- METADATOS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="language" content="es" />
+    
+    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    
+    <link rel="icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl; ?>/img/favicon.png">
+
+	<!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/atomit.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/responsive.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="nav-md">
+ 
+  <?php if(!Yii::app()->user->isGuest){ ?>
+
+    <div class="container contenedor-total body">
+
+        <div class="main_container">
+
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/logo6.png"><span>AtomIt</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+
+
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/img.jpg" alt="..." class="profile_pic_img center-block img-circle img-responsive">
+                        </div>
+                        <div class="profile_info col-md-12 text-center">
+                            <span>Bienvenido</span>
+                            <h2><?php echo Yii::app()->user->name ?></h2>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+                        <div class="menu_section">
+                            
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a href="<?php echo Yii::app()->request->baseUrl; ?>"><i class="fa fa-home"></i> Home </a>
+                                </li>
+                                <?php if(!Yii::app()->user->isGuest && Yii::app()->user->name=="admin"){ ?>
+                                <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="<?php echo Yii::app()->createUrl('/usuarios/index'); ?>">Admin</a>
+                                        </li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/usuarios/create'); ?>">Nuevo</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <?php } ?>
+                                <li>
+                                    <a href="<?php echo Yii::app()->createUrl('/clientes/admin'); ?>"><i class="fa fa-user-secret"></i> Clientes </a>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-folder-open "></i> Ordenes <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="<?php echo Yii::app()->createUrl('/ordenes/create'); ?>">Crear</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <?php if(!Yii::app()->user->isGuest && Yii::app()->user->name=="admin"){ ?>
+                                <li><a><i class="fa fa-cogs"></i> Componentes <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="<?php echo Yii::app()->createUrl('/barrio/index'); ?>">Barrios</a>
+                                        </li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/cuidad/index'); ?>">Cuidades</a>
+                                        </li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/departamento/index'); ?>">Departamentos</a>
+                                        </li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/marcas/index'); ?>">Marcas</a>
+                                        </li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/accesorios/index'); ?>">Accesorios</a>
+                                        </li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/contactos/admin'); ?>">Contactos</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Charts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="#">Chart JS</a>
+                                        </li>
+                                        <li><a href="#">Chart JS2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a href="<?php echo Yii::app()->createUrl('/historial/index'); ?>" data-toggle="tooltip" data-placement="top" title="Historial">
+                            <span class="fa fa-history" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+
+                <div class="nav_menu">
+                    <nav class="" role="navigation">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right menu-left">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/img.jpg" alt=""><?php echo Yii::app()->user->name ?>
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                                    <li><a href="<?php echo Yii::app()->createUrl('/usuarios/view',array('id'=>Yii::app()->user->id)); ?>">  Perfil</a></li>
+                                    <li>
+                                        <a href="<?php echo Yii::app()->createUrl('/usuarios/update',array('id'=>Yii::app()->user->id)); ?>">
+                                           <!--  <span class="badge bg-red pull-right">50%</span> -->
+                                            <!-- <span>Settings</span> -->
+                                            Settings
+                                        </a>
+                                    </li>
+<!--                                     <li>
+                                        <a href="javascript:;">Help</a>
+                                    </li> -->
+                                    <li><a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <!-- /top navigation -->
+
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <?php $this->widget('ext.Hzl.toastr.HzlToastr', array(
+                            'flashMessagesOnly'=> false,
+                            'options' => array(
+                                "closeButton" => true,
+                                "positionClass" => "toast-bottom-right",
+                                "showDuration" => "300",
+                                "hideDuration" => "1000",
+                                "timeOut" => "15000",
+                                "extendedTimeOut" => "1000",
+                                "showEasing" => "swing",
+                                "hideEasing" => "linear",
+                                "showMethod" => "fadeIn",
+                                "hideMethod" => "fadeOut"
+                            )
+                        ));
+                ?>
+                
+                <?php echo $content; ?>
+            </div>
+            <!-- /page content -->
+
+        </div>
+
+    </div>
+
+
+  <?php }else{ ?>
+    <div class="login">
+        <div class="login_container">
+            <?php echo $content; ?>
+        </div>
+    </div>    
+  <?php } ?>
+
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/nicescroll/jquery.nicescroll.min.js',CClientScript::POS_END) ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/bootstrap-notify.js',CClientScript::POS_END) ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/atomit.js',CClientScript::POS_END) ?>
+
+    
+
+</body>
+</html>
+
+
+
