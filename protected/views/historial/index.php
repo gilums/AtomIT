@@ -35,7 +35,7 @@ $('.search-button').click(function(){
 			/*array('name'=>'id', 'header'=>'#', 'htmlOptions'=>array('style'=>'width: 60px')),*/
 			array('name'=>'id_usuario','value'=>'$data->usuario->nick', 'header'=>'Usuario'),
 			array('name'=>'tipo', 'header'=>'Tipo'),
-			array('name'=>'estilo', 'header'=>'Estilo'),
+			array('name'=>'estilo', 'header'=>'Estilo','type'=>'raw','value'=>'$data->getTipoTexto()'),
 			/*array('name'=>'descripcion', 'header'=>'Descripcion'),*/
 			array('class' => 'booster.widgets.TbToggleColumn','name'=>'visto', 'header'=>'Visto','htmlOptions'=>array('style'=>'width: 30px')),
             array('name'=>'fecha_creacion', 'header'=>'Fecha creacion'),

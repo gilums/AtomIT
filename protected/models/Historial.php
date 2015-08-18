@@ -113,4 +113,18 @@ class Historial extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    
+    
+    public function getTipoTexto() {
+            return $this->labelOptions[$this->estilo];
+    }
+ 
+    public function getLabelOptions() {
+            return array(
+                    'Success' => '<span class="label label-success">Success</span>',
+                    'Warning' => '<span class="label label-warning">Warning</span>',
+                    'Error' => '<span class="label label-danger">Danger</span>',
+                    'Info' => '<span class="label label-info">Info</span>',
+            );
+    }
 }
