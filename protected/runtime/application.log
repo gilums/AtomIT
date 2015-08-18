@@ -26974,3 +26974,99 @@ in C:\wamp\www\AtomIT\index.php (13)
 in C:\wamp\www\AtomIT\protected\views\site\login.php (35)
 in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
 in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (41)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:18:41 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (52)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (41)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:19:23 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (52)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "booster" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (420)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (212)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (413)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\packages.php (14)
+in C:\wamp\www\AtomIT\protected\extensions\booster\components\Booster.php (260)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "user" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "session" application component
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (41)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+in C:\wamp\www\AtomIT\index.php (13)
+2015/08/19 01:20:17 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\AtomIT\protected\views\site\login.php (52)
+in C:\wamp\www\AtomIT\protected\controllers\SiteController.php (99)
+in C:\wamp\www\AtomIT\index.php (13)
