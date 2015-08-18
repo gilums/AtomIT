@@ -63,13 +63,13 @@ class TbToggleColumn extends TbDataColumn {
 	 * @var string the glyph icon toggle button "checked" state.
 	 * You may set this property to be false to render a text link instead.
 	 */
-	public $checkedIcon = 'ok-circle';
+	public $checkedIcon = 'toggle-on';
 
 	/**
 	 * @var string the glyph icon toggle button "unchecked" state.
 	 * You may set this property to be false to render a text link instead.
 	 */
-	public $uncheckedIcon = 'remove-sign';
+	public $uncheckedIcon = 'toggle-off';
 
 	/**
 	 * @var string the glyph icon toggle button "empty" state (example for null value)
@@ -248,7 +248,7 @@ function() {
             if (!isset($button['htmlOptions']['data-toggle'])) {
                 $button['htmlOptions']['data-toggle'] = 'tooltip';
             }
-			echo CHtml::link('<span class="glyphicon glyphicon-' . $button['icon'] . '"></span>', $button['url'], $button['htmlOptions']);
+			echo CHtml::link('<span class="fa fa-' . $button['icon'] . '"></span>', $button['url'], $button['htmlOptions']);
 		} else {
 			$button['label'] = $this->getButtonLabel($checked);
 			$button['class'] = 'booster.widgets.TbButton';

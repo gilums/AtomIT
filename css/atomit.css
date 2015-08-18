@@ -1532,17 +1532,18 @@ button,
 
 .login{
     height: 100%;
-    background: url(../img/35.jpg) no-repeat fixed center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+   /* background: #FF3D2F;*/
+   
 }
-
+.borde{
+    border: 1px solid red;
+}
 .login_container{
-    vertical-align: middle;
-    background: rgba(145,133,111,0.4);
+/*    background: rgba(145,133,111,0.4);*/
+    width: 40%;
     height: 350px;
+    margin: auto;
+    margin-top: 80px;
 
     /*
     display: block;
@@ -1572,20 +1573,113 @@ button,
     color: white;
 }
 .login-titulo{
-    margin-top: 50px;
+/*    margin-top: 50px;*/
     text-align: center;
     vertical-align: middle;
 }
 .login-contenido{
-    width: 50%;
-    height: 100%;
+
+  
     /*background: rgba(254,102,1,0.4);*/
 }
+/*.btn-login{
+    width: 150px;
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+}*/
 .centrar{
-    margin-right: 30px;
+    margin-right: 10px;
     margin: 0 auto !important;
 }
 
+.title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 22px;
+    width: 100%;
+    color: #ECF0F1 !important;
+    margin-left: 0 !important;
+    padding-top: 5px !important;
+    display: block;
+    height: 90px;
+    margin: 0;
+    padding-left: 10px;
+}
+.title a{
+
+}
+.title:hover,
+.title:focus {
+    text-decoration: none
+}
+.title img{
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 130px;
+}
+.title span{
+    font-family: 'Pacifico', cursive;
+    font-size: 45px;
+}
+
+.title>span{
+    vertical-align: middle;
+}
+
+
+.formulario-contacto{
+    padding-bottom: 20px;
+}
+.login .form-input:placeholder{
+    color:#FF3D2F;
+}
+.login .form-input {
+  background: transparent !important;
+  border: 2px solid white !important;
+  padding: 12px 16px !important;
+  width: 100%;
+  color: white;
+}
+.login .form-input:hover {
+    border: 2px solid #FF3D2F !important;
+}
+.login .form-input:focus {
+    background: white !important;
+    color: red;
+    border: 2px solid #FF3D2F !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: inherit;
+}
+.btn-login{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 180px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+
+.btn-login:hover{
+    background-color: #FF3D2F;
+    border-color: #FF3D2F;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    color: white;
+}
+
+.login .errorMessage{
+    padding:5px;
+    background-color: #FF3D2F;
+}
 
 /*---------------- GRID VIEW ------------------*/
 .grid-view{

@@ -27,23 +27,18 @@ class CiudadController extends Controller
 	public function accessRules()
 	{
 		return array(
-			/*array('allow',  // allow all users to perform 'index' and 'view' actions
+			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),*/
-/*			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','delete'),
-				'users'=>array('@'),
-			),*/
+			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','delete'),
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			/*
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('delete'),
-				'users'=>array('admin'),
-			),*/
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -68,28 +63,15 @@ class CiudadController extends Controller
 	public function actionCreate()
 	{
 		$model=new Ciudad;
-        $historial=new Historial;
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Ciudad']))
 		{
 			$model->attributes=$_POST['Ciudad'];
-            
-            $historial->id_usuario=Yii::app()->user->getId();
-			$historial->tipo="Create";
-			$historial->estilo="Success";
-			$historial->descripcion="Creo la ciudad: " . $model->nombre;
-            
-			if($model->save()){
-                $historial->save();
-                Yii::app()->user->setFlash('Success ', 'Se creo correctamente la ciudad');
-				$this->redirect(array('index'));
-				//$this->redirect(array('view','id'=>$model->id));
-            else{
-                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear ciudad');
-            }
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -105,28 +87,15 @@ class CiudadController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-        $historial=new Historial;
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Ciudad']))
 		{
 			$model->attributes=$_POST['Ciudad'];
-            
-            $historial->id_usuario=Yii::app()->user->getId();
-			$historial->tipo="Update";
-			$historial->estilo="Warning";
-			$historial->descripcion="Modifico la ciudad: " . $model->nombre;
-            
-			if($model->save()){
-                $historial->save();
-                Yii::app()->user->setFlash('Info', 'Se modifico correctamente la ciudad');
-				$this->redirect(array('index'));
-				//$this->redirect(array('view','id'=>$model->id));
-            }else{
-                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al modificar ciudad');
-            }
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -141,19 +110,11 @@ class CiudadController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-        $cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
-        
-        $historial = new Historial;
-		$historial->id_usuario=Yii::app()->user->getId();
-        $historial->tipo="Delete";
-        $historial->estilo="Error";
-		$historial->descripcion="Elimino la ciudad: " . $cpy->nombre;
-		$historial->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
 	/**
@@ -161,22 +122,15 @@ class CiudadController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*
 		$dataProvider=new CActiveDataProvider('Ciudad');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));*/
-		$model=new Ciudad('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Ciudad']))
-			$model->attributes=$_GET['Ciudad'];
-
-		$this->render('index',array(
-			'model'=>$model,
 		));
 	}
 
-	/*
+	/**
+	 * Manages all models.
+	 */
 	public function actionAdmin()
 	{
 		$model=new Ciudad('search');
@@ -188,7 +142,7 @@ class CiudadController extends Controller
 			'model'=>$model,
 		));
 	}
-	*/
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
