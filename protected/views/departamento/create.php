@@ -3,8 +3,8 @@
 /* @var $model Departamento */
 
 $this->breadcrumbs=array(
-	'Departamentos'=>array('index'),
-	'Crear',
+	'Departamento'=>array('index'),
+	'Create',
 );
 
 $this->menu=array(
@@ -13,9 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<div class="modal-header">
-	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-	<h2 class="modal-title" id="myModalLabel">Crear Departamento</h2>
-</div>
-<br>
+<h1>Crear Departamento</h1>
+
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

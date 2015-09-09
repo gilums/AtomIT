@@ -30,13 +30,13 @@ class UsuariosController extends Controller
 			/*array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update'),
-				'users'=>array('@'),
 			),*/
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('loadImage'),
+				'users'=>array('@'),
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','create','update','delete'),
+				'actions'=>array('index','view','create','update','delete','loadImage'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -72,6 +72,17 @@ class UsuariosController extends Controller
 		{
 			$model->attributes=$_POST['Usuarios'];
             
+            
+            if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
+            {
+                $file = CUploadedFile::getInstance($model,'foto');
+                $fp = fopen($file->tempName, 'r');
+                $content = fread($fp, filesize($file->tempName));
+                fclose($fp);
+                $model->foto = $content;
+            }
+            
+            
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
@@ -91,6 +102,7 @@ class UsuariosController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+/*            'types'=>Type::model()->findAll()*/
 		));
 	}
 
@@ -109,6 +121,15 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
+            
+            if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
+            {
+                $file = CUploadedFile::getInstance($model,'foto');
+                $fp = fopen($file->tempName, 'r');
+                $content = fread($fp, filesize($file->tempName));
+                fclose($fp);
+                $model->foto = $content;
+            }
             
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
@@ -217,4 +238,13 @@ class UsuariosController extends Controller
 			Yii::app()->end();
 		}
 	}
+    
+    
+    public function actionloadImage($id)
+    {
+        $model=$this->loadModel($id);
+        $this->renderPartial('image', array(
+            'model'=>$model
+        ));
+    }
 }

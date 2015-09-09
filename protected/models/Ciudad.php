@@ -47,7 +47,7 @@ class Ciudad extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'barrios' => array(self::HAS_MANY, 'Barrio', 'id_ciudad'),
-			'idDepartamento' => array(self::BELONGS_TO, 'Departamento', 'id_departamento'),
+			'departamento' => array(self::BELONGS_TO, 'Departamento', 'id_departamento'),
 		);
 	}
 

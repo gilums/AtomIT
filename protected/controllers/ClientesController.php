@@ -153,16 +153,18 @@ class ClientesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Clientes');
+		$model=new Clientes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Clientes']))
+			$model->attributes=$_GET['Clientes'];
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
+
+/*	public function actionAdmin()
 	{
 		$model=new Clientes('search');
 		$model->unsetAttributes();  // clear any default values
@@ -172,7 +174,7 @@ class ClientesController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
-	}
+	}*/
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

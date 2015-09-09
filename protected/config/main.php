@@ -79,7 +79,12 @@ return array(
 			'allowAutoLogin'=>true,
 			'loginUrl'=>array('site/login'),
 		),
-        
+
+        'image'=>array(
+            'class'=>'application.extensions.image.CImageComponent',
+            'driver'=>'GD',
+        ),
+ 
         // se agrega el componente propio para los mensajes de la tabla historial
         'Mensajes' => array(
             'class'=>'ext.Mensajes'

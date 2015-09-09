@@ -1496,6 +1496,8 @@ button,
 
 .profile_pic_img {
     border: 3px solid white;
+    width: 128px;
+    height: 128px;
 }
 
 .menu-left {

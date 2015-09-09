@@ -45,7 +45,9 @@
 
                     <div class="profile">
                         <div class="profile_pic">
-                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/img.jpg" alt="..." class="profile_pic_img center-block img-circle img-responsive">
+<!--                            <img src="<?php #echo Yii::app()->request->baseUrl; ?>/img/img.jpg" alt="..." class="profile_pic_img center-block img-circle img-responsive">-->
+                            <!--<img src="data:image/jpeg;base64,<?php #base64_encode(Yii::app()->user->foto); ?>" alt="..." class="profile_pic_img center-block img-circle img-responsive">-->
+                            <?php echo CHtml::image(Yii::app()->controller->createUrl('usuarios/loadImage', array('id'=>Yii::app()->user->id)),'',array('class'=>'profile_pic_img center-block img-circle img-responsive')); ?>
                         </div>
                         <div class="profile_info col-md-12 text-center">
                             <span>Bienvenido</span>
@@ -75,7 +77,7 @@
                                 </li>
                                 <?php } ?>
                                 <li>
-                                    <a href="<?php echo Yii::app()->createUrl('/clientes/admin'); ?>"><i class="fa fa-user-secret"></i> Clientes </a>
+                                    <a href="<?php echo Yii::app()->createUrl('/clientes/index'); ?>"><i class="fa fa-user-secret"></i> Clientes </a>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-folder-open "></i> Ordenes <span class="fa fa-chevron-down"></span></a>
@@ -89,7 +91,7 @@
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="<?php echo Yii::app()->createUrl('/barrio/index'); ?>">Barrios</a>
                                         </li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('/cuidad/index'); ?>">Cuidades</a>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/ciudad/index'); ?>">Cuidades</a>
                                         </li>
                                         <li><a href="<?php echo Yii::app()->createUrl('/departamento/index'); ?>">Departamentos</a>
                                         </li>
@@ -126,7 +128,7 @@
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout">
+                        <a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>" data-toggle="tooltip" data-placement="top" title="Logout">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -145,7 +147,8 @@
                         <ul class="nav navbar-nav navbar-right menu-left">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/img.jpg" alt=""><?php echo Yii::app()->user->name ?>
+                                   <?php echo CHtml::image(Yii::app()->controller->createUrl('usuarios/loadImage', array('id'=>Yii::app()->user->id))); ?>
+                                    <?php echo Yii::app()->user->name ?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">

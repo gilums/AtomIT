@@ -7,7 +7,11 @@
  * @property integer $id
  * @property string $nick
  * @property string $pass
+ * @property string $foto
  * @property string $fecha_creacion
+ *
+ * The followings are the available model relations:
+ * @property Historial[] $historials
  */
 class Usuarios extends CActiveRecord
 {
@@ -29,9 +33,13 @@ class Usuarios extends CActiveRecord
 		return array(
 			array('nick, pass', 'required'),
 			array('nick, pass', 'length', 'max'=>20),
+            array('foto', 'file', 'types'=>'jpg, gif, png, bmp, jpeg','maxSize'=>1024 * 1024 * 10, // 10MB
+                'tooLarge'=>'El usuario no puede ser mayor 10MB. Por favor suba un archivo mas pequeño.',
+                'allowEmpty' => true
+            ),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nick, pass, fecha_creacion', 'safe', 'on'=>'search'),
+			array('id, nick, pass, foto, fecha_creacion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -40,10 +48,12 @@ class Usuarios extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
+
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+            'historials' => array(self::HAS_MANY, 'Historial', 'id_usuario'),
+        );
 	}
 
 	/**
@@ -55,6 +65,7 @@ class Usuarios extends CActiveRecord
 			'id' => 'ID',
 			'nick' => 'Nick',
 			'pass' => 'Contraseña',
+            'foto' => 'Foto',
 			'fecha_creacion' => 'Fecha Creacion',
 		);
 	}
@@ -80,6 +91,7 @@ class Usuarios extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nick',$this->nick,true);
 		$criteria->compare('pass',$this->pass,true);
+        $criteria->compare('foto',$this->foto,true);
 		$criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 
 		return new CActiveDataProvider($this, array(

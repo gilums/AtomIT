@@ -1,6 +1,6 @@
 <?php
 
-/* @var $this UsuariosController */
+/* @var $this CiudadController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->widget(

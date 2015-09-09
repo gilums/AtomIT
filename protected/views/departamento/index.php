@@ -1,51 +1,51 @@
 <?php
+
 /* @var $this DepartamentoController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Departamentos',
+$this->widget(
+    'booster.widgets.TbBreadcrumbs',
+    array(
+        'links' => array('Departamento' => 'index'), 
+    )
 );
 
-$this->menu=array(
-	array('label'=>'Create Departamento', 'url'=>array('create')),
-	array('label'=>'Manage Departamento', 'url'=>array('admin')),
-);
 
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.filters').toggle();
+	return false;
+});
+");
 ?>
 
-<h1>Departamentos</h1>
-<br>
-<div class="row">
-	<div class="col-lg-12">
-		<button class="btn btn-primary btnCrearDepto" data-toggle="modal" data-target="#myModal">
-		  Crear
-		</button>
-	</div>
-</div>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'departamento-grid',
+<div class="panel panel-default">
+    <div class="panel-heading text-left">Administrador Departamento <a href="#" class="btn-link btn-sm search-button"><i class="fa fa-search"></i></a><a href="<?php echo Yii::app()->createAbsoluteUrl('departamento/create'); ?>" class="btn-link btn-sm"><i class="fa fa-plus"></i></a></div>
+
+<div class="panel-body admin">
+<?php $this->widget('booster.widgets.TbExtendedGridView', array(
+	'id'=>'ciudad-grid',
+	'type' => 'condensed',
 	'dataProvider'=>$model->search(),
+    'responsiveTable' => true,
+	'template' => "{items}{pager}",
 	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'nombre',
-		array(
-			'class'=>'CButtonColumn',
+	'columns'=>	array(
+			array('name'=>'id', 'header'=>'#', 'htmlOptions'=>array('style'=>'width: 60px')),
+			array('name'=>'nombre', 'header'=>'Nombre'),
+			array(
+				'htmlOptions' => array('nowrap'=>'nowrap'),
+				'class'=>'booster.widgets.TbButtonColumn',
+                'deleteConfirmation'=>'Esta seguro que desea eliminar la ciudad?',
+				'viewButtonUrl'=>'Yii::app()->createUrl("departamento/view", array("id"=>$data->id))',
+				'updateButtonUrl'=>'Yii::app()->createUrl("departamento/update", array("id"=>$data->id))',
+				'deleteButtonUrl'=>'Yii::app()->createUrl("departamento/delete", array("id"=>$data->id))',
+			),
 		),
-	),
+
 )); ?>
+    </div>
+<div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  	<div class="modal-dialog">
-	    <div class="modal-content">
-	    
-	      <div class="modal-body">
-	        ...
-	      </div>
-
-	    </div>
-  	</div>
-</div>

@@ -86,12 +86,12 @@ class DepartamentoController extends Controller
                 Yii::app()->user->setFlash('Success ', 'Se creo correctamente el departamento');
 				$this->redirect(array('index'));
 				//$this->redirect(array('view','id'=>$model->id));
-            else{
+            }else{
                 Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear departamento');
             }
 		}
 
-		$this->renderPartial('create',array(
+		$this->render('create',array(
 			'model'=>$model,
 		));
 	}

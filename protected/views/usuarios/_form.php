@@ -6,13 +6,16 @@
 
 <div class="form-horizontal" role="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('booster.widgets.TbActiveForm', array(
 	'id'=>'usuarios-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+    'htmlOptions'=>array(
+        'enctype'=>'multipart/form-data'
+    )
 )); ?>
 	
 	<p class="note">Requeridos<span class="required">*</span></p>
@@ -43,6 +46,15 @@
 			<?php echo $form->error($model,'pass'); ?>
 		</div>
 	</div>
+	
+	<?php echo $form->fileFieldGroup($model, 'foto',
+        array(
+            'wrapperHtmlOptions' => array(
+                'class' => 'col-sm-5',
+            ),
+        )
+    ); ?>
+	
 <!--
 	<div class="row">
 		<?php #echo $form->labelEx($model,'fecha_creacion'); ?>
@@ -55,6 +67,7 @@
 			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array('class'=>'btn btn-default')); ?>
 		</div>
 	</div>
+
 
 <?php $this->endWidget(); ?>
 

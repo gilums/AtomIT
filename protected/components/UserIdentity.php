@@ -35,6 +35,7 @@ class UserIdentity extends CUserIdentity
 			//$this->_id_rol=$user->id_rol;
 			//$this->setState('email',$user->email);
 			$this->setState('id',$user->id);
+            $this->setState('foto',$user->foto);
 			//$this->setState('rol',$user->id_rol);
 
 			$this->errorCode=self::ERROR_NONE;
