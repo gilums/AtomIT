@@ -61,7 +61,7 @@ class Ordenes extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'clientes' => array(self::BELONGS_TO, 'Clientes', 'id_cliente'),
-			'equipos' => array(self::BELONGS_TO, 'Equipos', 'id_equipo'),
+			'equipo' => array(self::BELONGS_TO, 'Equipos', 'id_equipo'),
 		);
 	}
 
@@ -79,7 +79,7 @@ class Ordenes extends CActiveRecord
 			'falla' => 'Falla',
 			'diagnostico' => 'Diagnostico',
 			'solucion' => 'Solucion',
-			'nota' => 'Nota',
+			'nota' => 'Presupuesto',
 			'condicion' => 'Condicion',
 			'estado' => 'Estado',
 			'transporte' => 'Transporte',

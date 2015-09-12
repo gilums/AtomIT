@@ -11,7 +11,7 @@ $this->widget(
 );
 
 
-Yii::app()->clientScript->registerScript('search', "
+Yii::app()->clientScript->registerScript('search', "$('.filters').toggle().hide();
 $('.search-button').click(function(){
 	$('.filters').toggle();
 	return false;
@@ -25,7 +25,7 @@ $('.search-button').click(function(){
 
 <div class="panel-body admin">
 <?php $this->widget('booster.widgets.TbExtendedGridView', array(
-	'id'=>'ciudad-grid',
+	'id'=>'departamento-grid',
 	'type' => 'condensed',
 	'dataProvider'=>$model->search(),
     'responsiveTable' => true,

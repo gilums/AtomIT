@@ -56,7 +56,17 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		//$this->render('index');
+        
+        $model=new Ordenes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Ordenes']))
+			$model->attributes=$_GET['Ordenes'];
+
+		$this->render('index',array(
+			'model'=>$model,
+		));
+        
 	}
 
 	/**

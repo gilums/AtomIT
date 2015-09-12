@@ -36,7 +36,7 @@ class OrdenesController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','create','update','index','view'),
+				'actions'=>array('delete','create','update','index','view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -105,7 +105,7 @@ class OrdenesController extends Controller
 					if($model->save()){
                         $historial->save();
                         Yii::app()->user->setFlash('Success', 'Se creo correctamente la orden');
-                        $this->redirect(array('index'));
+                        $this->redirect(array('site/index'));
                     }else{
                         Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear orden');
                     }
@@ -150,7 +150,7 @@ class OrdenesController extends Controller
 			if($model->save()){
                 $historial->save();
                 Yii::app()->user->setFlash('Info', 'Se modifico correctamente la orden');
-				$this->redirect(array('index'));
+				$this->redirect(array('site/index'));
 				//$this->redirect(array('view','id'=>$model->id));
             }else{
                 Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear orden');
@@ -172,6 +172,11 @@ class OrdenesController extends Controller
 		$cpy=$this->loadModel($id);
 		$this->loadModel($id)->delete();
         
+        $equipo=Equipos::model()->findByPk($cpy->equipo->id);
+        if($equipo!=null){
+            $equipo->delete();
+        }
+        
         $historial = new Historial;
 		$historial->id_usuario=Yii::app()->user->getId();
         $historial->tipo="Delete";
@@ -189,16 +194,20 @@ class OrdenesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Ordenes');
+		$model=new Ordenes('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Ordenes']))
+			$model->attributes=$_GET['Ordenes'];
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+/*	public function actionAdmin()
 	{
 		$model=new Ordenes('search');
 		$model->unsetAttributes();  // clear any default values
@@ -208,7 +217,7 @@ class OrdenesController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
-	}
+	}*/
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

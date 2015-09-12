@@ -36,7 +36,7 @@ class UsuariosController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','create','update','delete','loadImage'),
+				'actions'=>array('index','view','create','update','delete','crearPdf'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -246,5 +246,23 @@ class UsuariosController extends Controller
         $this->renderPartial('image', array(
             'model'=>$model
         ));
+    }
+    
+    public function actionCrearPdf(){
+        $model=Usuarios::model()->findAll();
+        $mPDF1 = Yii::app()->ePdf->mpdf();
+
+        $mPDF1->WriteHTML(
+
+            $this->render('pdf',array(
+
+                'model'=>$model
+
+            ), true)
+
+        );
+
+        $mPDF1->Output();
+
     }
 }

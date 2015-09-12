@@ -154,16 +154,20 @@ class ContactosController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Contactos');
+		$model=new Contactos('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Contactos']))
+			$model->attributes=$_GET['Contactos'];
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'model'=>$model,
 		));
 	}
 
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+/*	public function actionAdmin()
 	{
 		$model=new Contactos('search');
 		$model->unsetAttributes();  // clear any default values
@@ -173,7 +177,7 @@ class ContactosController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
-	}
+	}*/
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

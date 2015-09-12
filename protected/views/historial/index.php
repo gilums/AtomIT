@@ -1,5 +1,5 @@
 <?php
-/* @var $this UsuariosController */
+/* @var $this HistorialController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->widget(
@@ -10,7 +10,7 @@ $this->widget(
 );
 
 
-Yii::app()->clientScript->registerScript('search', "
+Yii::app()->clientScript->registerScript('search', "$('.filters').toggle().hide();
 $('.search-button').click(function(){
 	$('.filters').toggle();
 	return false;

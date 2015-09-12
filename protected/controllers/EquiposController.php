@@ -36,7 +36,7 @@ class EquiposController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('delete','update','index','view'),
+				'actions'=>array('delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -157,7 +157,7 @@ class EquiposController extends Controller
 		if(isset($_GET['Equipos']))
 			$model->attributes=$_GET['Equipos'];
 
-		$this->render('admin',array(
+		$this->render('index',array(
 			'model'=>$model,
 		));
 	}

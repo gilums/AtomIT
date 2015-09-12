@@ -38,7 +38,7 @@ return array(
 	// application components
 	'components'=>array(
 		'ePdf' => array(
-        'class'         => 'ext.yii-pdf.EYiiPdf',
+        'class'         => 'ext.pdf.EYiiPdf',
         'params'        => array(
             'mpdf'     => array(
                 'librarySourcePath' => 'application.vendors.mpdf.*',

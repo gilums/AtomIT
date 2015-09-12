@@ -80,6 +80,9 @@
                                     <a href="<?php echo Yii::app()->createUrl('/clientes/index'); ?>"><i class="fa fa-user-secret"></i> Clientes </a>
                                 </li>
                                 <li>
+                                    <a href="<?php echo Yii::app()->createUrl('/equipos/index'); ?>"><i class="fa fa-laptop"></i> Equipos </a>
+                                </li>
+                                <li>
                                     <a><i class="fa fa-folder-open "></i> Ordenes <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="<?php echo Yii::app()->createUrl('/ordenes/create'); ?>">Crear</a>
@@ -99,7 +102,7 @@
                                         </li>
                                         <li><a href="<?php echo Yii::app()->createUrl('/accesorios/index'); ?>">Accesorios</a>
                                         </li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('/contactos/admin'); ?>">Contactos</a>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/contactos/index'); ?>">Contactos</a>
                                         </li>
                                     </ul>
                                 </li>

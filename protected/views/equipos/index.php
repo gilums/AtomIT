@@ -1,56 +1,52 @@
 <?php
+
 /* @var $this EquiposController */
-/* @var $model Equipos */
+/* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Equiposes'=>array('index')
+$this->widget(
+    'booster.widgets.TbBreadcrumbs',
+    array(
+        'links' => array('Equipos' => 'index'), 
+    )
 );
 
-$this->menu=array(
-	array('label'=>'List Equipos', 'url'=>array('index')),
-	array('label'=>'Create Equipos', 'url'=>array('create')),
-);
 
-Yii::app()->clientScript->registerScript('search', "
+Yii::app()->clientScript->registerScript('search', "$('.filters').toggle().hide();
 $('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#equipos-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
+	$('.filters').toggle();
 	return false;
 });
 ");
 ?>
 
-<h1>Manage Equiposes</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<div class="panel panel-default">
+    <div class="panel-heading text-left">Administrador Equipos <a href="#" class="btn-link btn-sm search-button"><i class="fa fa-search"></i></a></div>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<div class="panel-body admin">
+<?php $this->widget('booster.widgets.TbExtendedGridView', array(
 	'id'=>'equipos-grid',
+	'type' => 'condensed',
 	'dataProvider'=>$model->search(),
+    'responsiveTable' => true,
+	'template' => "{items}{pager}",
 	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'modelo',
-		'nro_serie',
-		'tipo',
-		'id_marca',
-		array(
-			'class'=>'CButtonColumn',
+	'columns'=>	array(
+			array('name'=>'id', 'header'=>'#', 'htmlOptions'=>array('style'=>'width: 60px')),
+			array('name'=>'modelo', 'header'=>'Modelo'),
+			array('name'=>'nro_serie', 'header'=>'Nro. Serie'),
+			array('name'=>'tipo', 'header'=>'Tipo'),
+			array('name'=>'id_marca','value'=>'$data->marcas->nombre','header'=>'Marca'),
+			array(
+				'htmlOptions' => array('nowrap'=>'nowrap'),
+				'class'=>'booster.widgets.TbButtonColumn',
+                'deleteConfirmation'=>'Esta seguro que desea eliminar la ciudad?',
+				'viewButtonUrl'=>'Yii::app()->createUrl("equipos/view", array("id"=>$data->id))',
+				'updateButtonUrl'=>'Yii::app()->createUrl("equipos/update", array("id"=>$data->id))',
+				'deleteButtonUrl'=>'Yii::app()->createUrl("equipos/delete", array("id"=>$data->id))',
+			),
 		),
-	),
+
 )); ?>
+    </div>
+<div>

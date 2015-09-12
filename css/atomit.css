@@ -1687,3 +1687,12 @@ button,
 .grid-view{
     padding-top: 0px !important;
 } 
+
+
+.filters td:first-child{
+    width: 70px !important;
+}
+
+.contenedor_tabs_ordenes{
+    padding-top: 30px;
+}
