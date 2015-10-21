@@ -7,13 +7,6 @@ $this->breadcrumbs=array(
 	$model->id,
 );
 
-$this->menu=array(
-	array('label'=>'List Ordenes', 'url'=>array('index')),
-	array('label'=>'Create Ordenes', 'url'=>array('create')),
-	array('label'=>'Update Ordenes', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Ordenes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Ordenes', 'url'=>array('admin')),
-);
 ?>
 
 <h1>View Ordenes #<?php echo $model->id; ?></h1>

@@ -36,7 +36,7 @@ class OrdenesController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('delete','create','update','index','view'),
+				'actions'=>array('delete','create','update','index','view','orden','crearPdf','pdfUpdate'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -51,9 +51,15 @@ class OrdenesController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+/*		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+*/
+		$this->render('pdfView',array(
+			'model'=>$this->loadModel($id),
+		));
+
+
 	}
 
 	/**
@@ -137,7 +143,28 @@ class OrdenesController extends Controller
         $historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
+        if(isset($_POST['upandimp']))
+		{
+			$model->attributes=$_POST['upandimp'];
+            
+            $historial->id_usuario=Yii::app()->user->getId();
+			$historial->tipo="Update";
+			$historial->estilo="Warning";
+			$historial->descripcion="Modifico la orden: " . $model->id;
 
+			$this->pdfUpdate($model->id);
+
+			if($model->save()){
+                $historial->save();
+                Yii::app()->user->setFlash('Info', 'Se modifico correctamente la orden');
+				$this->redirect(array('site/index'));
+				//$this->redirect(array('view','id'=>$model->id));
+            }else{
+                Yii::app()->user->setFlash('Error', '<strong>Error!!</strong> al crear orden');
+            }
+		}
+        
 		if(isset($_POST['Ordenes']))
 		{
 			$model->attributes=$_POST['Ordenes'];
@@ -246,4 +273,78 @@ class OrdenesController extends Controller
 			Yii::app()->end();
 		}
 	}
+    
+   /*    public function actionSo($id){
+
+        $model=$this->loadModel($id);
+        $mPDF1 = Yii::app()->ePdf->mpdf();
+
+        $mPDF1->WriteHTML(
+
+            $this->render('pdf',array(
+
+                'model'=>$model, true
+
+            ))
+
+        );
+
+        $mPDF1->Output();
+
+    }*/
+
+    public function pdfUpdate($id){
+    	//system.out.println("id: ".$id);
+    	echo "<script>alert('".$id."');</script>";
+    	$this->debug_to_console('id: '.$id);
+        $model=$this->loadModel($id);
+        /*$mPDF1 = Yii::app()->ePdf->mpdf();
+
+        $mPDF1->WriteHTML(
+
+            $this->render('pdfView_2',array(
+
+                'model'=>$model, true
+
+            ))
+
+        );
+
+        $mPDF1->Output();*/
+        $html2pdf = Yii::app()->ePdf->HTML2PDF();
+        $html2pdf->WriteHTML($this->render('pdfView_2', array('model'=>$model), true));
+        $html2pdf->Output();
+
+    }
+    
+/*    public function actionOrden(){
+
+        $this->render('pdfView');
+
+    }*/
+    
+    public function actionCrearPdf(){
+
+        $mPDF1 = Yii::app()->ePdf->mpdf();
+
+        $mPDF1->WriteHTML(
+
+            $this->render('pdfView_2')
+
+        );
+
+        $mPDF1->Output();
+    }
+
+
+    public function debug_to_console( $data ) {
+
+	    if ( is_array( $data ) )
+	        $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+	    else
+	        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+
+	    echo $output;
+	}
+
 }

@@ -34,6 +34,8 @@ $mpdf->SetFooter('Pie de página');
 $mpdf->SetWatermarkImage("/images/logo.jpg");
 $mpdf ->showWatermarkImage = true;*/
 $mpdf->WriteHTML($html);
-$mpdf->Output('Usuarios.pdf','D');
+$data=$mpdf->Output('Usuarios.pdf','I');
 exit;
+
+
 ?>
