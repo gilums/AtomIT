@@ -110,7 +110,8 @@ if ($model->isNewRecord==false) {
                 <div class="form-group">
                     <div class="col-lg-12">
                         <?php echo CHtml::submitButton('Guardar',array('class'=>'btn btn-primary')); ?>
-                        <?php echo CHtml::submitButton('Guardar/Imprimir',array('class'=>'btn btn-primary','name'=>'upandimp','target'=>'_blank')); ?>
+                        <?php echo CHtml::submitButton('Guardar/Imprimir',array('class'=>'btn btn-primary','onClick'=>'lanzarPdf()')); ?>
+                        <!--<?php #echo CHtml::submitButton('Guardar/Imprimir',array('class'=>'btn btn-primary','name'=>'upandimp','id'=>'lanzarPdf')); ?>-->
                     </div>
                 </div>
             </div>
@@ -202,4 +203,13 @@ if ($model->isNewRecord==false) {
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script type="text/javascript">
+    function lanzarPdf(){
+           //alert(id);
+           var url='<?php echo Yii::app()->createUrl("ordenes/pdfcreate", array('id'=>$model->id)); ?>';
+           window.open(url, "_blank", "width=900,height=700"); 
+           return false;
+    }
+</script>
 

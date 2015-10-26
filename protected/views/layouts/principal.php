@@ -106,14 +106,14 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-bar-chart-o"></i> Charts <span class="fa fa-chevron-down"></span></a>
+                                <!--<li><a><i class="fa fa-bar-chart-o"></i> Charts <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="#">Chart JS</a>
                                         </li>
                                         <li><a href="#">Chart JS2</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <?php } ?>
                             </ul>
                         </div>

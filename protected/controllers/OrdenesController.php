@@ -36,7 +36,7 @@ class OrdenesController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('delete','create','update','index','view','orden','crearPdf','pdfUpdate'),
+				'actions'=>array('delete','create','update','index','view','orden','crearPdf','pdfUpdate','pdfCreate'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -323,7 +323,21 @@ class OrdenesController extends Controller
 
     }*/
     
-    public function actionCrearPdf(){
+    public function actionPdfCreate($id){
+    	//system.out.println("id: ".$id);
+    	//echo "<script>alert('".$id."');</script>";
+    	//$this->debug_to_console('id: '.$id);
+        $model=$this->loadModel($id);
+        $mPDF1 = Yii::app()->ePdf->mpdf();
+        $mPDF1->WriteHTML($this->render('pdfView_2',array('model'=>$model), true));
+        $mPDF1->Output();
+        //$html2pdf = Yii::app()->ePdf->HTML2PDF();
+        //$html2pdf->WriteHTML($this->render('pdfView_2', array('model'=>$model), true));
+        //$html2pdf->Output();
+
+    }
+    
+/*    public function actionCrearPdf(){
 
         $mPDF1 = Yii::app()->ePdf->mpdf();
 
@@ -332,12 +346,12 @@ class OrdenesController extends Controller
             $this->render('pdfView_2')
 
         );
-
+        
         $mPDF1->Output();
-    }
+    }*/
 
 
-    public function debug_to_console( $data ) {
+/*    public function debug_to_console( $data ) {
 
 	    if ( is_array( $data ) )
 	        $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
@@ -345,6 +359,6 @@ class OrdenesController extends Controller
 	        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
 
 	    echo $output;
-	}
+	}*/
 
 }
