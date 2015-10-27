@@ -121,7 +121,7 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-            
+            $model->pass=$model->hashPassword($_POST['Usuarios']['pass'],$model->generateSalt());
             if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
             {
                 $file = CUploadedFile::getInstance($model,'foto');
