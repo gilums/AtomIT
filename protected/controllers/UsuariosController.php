@@ -32,12 +32,13 @@ class UsuariosController extends Controller
 				'users'=>array('*'),
 			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('loadImage'),
+				'actions'=>array('loadImage','view','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','create','update','delete','crearPdf'),
-				'users'=>array('admin'),
+				'actions'=>array('index','view','create','update','delete','crearPdf','asignarRol'),
+				#'users'=>array('admin'),
+                'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -51,8 +52,37 @@ class UsuariosController extends Controller
 	 */
 	public function actionView($id)
 	{
+        $role=new RoleForm;
+        $historial=new Historial;
+
+        if(isset($_POST['ajax']) and $_POST['ajax']==='role-form')
+        {
+            echo CActiveForm::validate($role);
+            Yii::app()->end();
+        }
+
+        if(isset($_POST['RoleForm']))
+        {
+            $role->attributes=$_POST['RoleForm'];
+            $historial->id_usuario=Yii::app()->user->getId();
+            $historial->tipo="Create";
+            $historial->estilo="Success";
+            $historial->descripcion="Creo el rol: " . $role->name;
+            if($role->validate()){
+
+                Yii::app()->authManager->createRole($role->name,$role->description);
+                Yii::app()->authManager->assign($role->name,$id);
+
+                //Yii::app()->user->setFlash('Success ', 'Se creo correctamente el rol '.$role->name);
+                $this->redirect(array('view','id'=>$id));
+
+            }
+        }
+
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+            'role'=>$role,
 		));
 	}
 
@@ -71,7 +101,7 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-            
+            $model->pass=md5($model->pass); //Esta es la linea que se debe agregar
             
             if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
             {
@@ -120,6 +150,8 @@ class UsuariosController extends Controller
 
 		if(isset($_POST['Usuarios']))
 		{
+            $foto_ant=$model->foto;
+            $model->pass=md5($model->pass); //Esta es la linea que se debe agregar
 			$model->attributes=$_POST['Usuarios'];
             $model->pass=$model->hashPassword($_POST['Usuarios']['pass'],$model->generateSalt());
             if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
@@ -130,7 +162,11 @@ class UsuariosController extends Controller
                 fclose($fp);
                 $model->foto = $content;
             }
+            else{
+                $model->foto=$foto_ant;
+            }
             
+
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
@@ -198,6 +234,15 @@ class UsuariosController extends Controller
 		));
 	}
 
+    public function actionAsignarRol($id){
+
+        if (Yii::app()->authManager->checkAccess($_GET["item"],$id)) {
+            Yii::app()->authManager->revoke($_GET["item"],$id);
+        }else
+            Yii::app()->authManager->assign($_GET["item"],$id);
+
+        $this->redirect(array("view","id"=>$id));
+    }
 	/*
 	public function actionAdmin()
 	{

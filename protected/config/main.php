@@ -37,6 +37,10 @@ return array(
 
 	// application components
 	'components'=>array(
+        'authManager' => array(
+            'class'=>'CDbAuthManager',
+            'connectionID'=>'db',
+        ),
 		'ePdf' => array(
         'class'         => 'ext.pdf.EYiiPdf',
         'params'        => array(

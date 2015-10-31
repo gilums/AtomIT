@@ -36,7 +36,7 @@ class BarrioController extends Controller
 				'users'=>array('@'),
 			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','delete'),
+				'actions'=>array('index','view','create','update','delete','ciudadbydepartamentos'),
 				'users'=>array('admin'),
 			),
 			/*
@@ -217,4 +217,17 @@ class BarrioController extends Controller
 			Yii::app()->end();
 		}
 	}
+    
+        
+    public function actionCiudadByDepartamentos(){
+        
+        $id=$_POST['Barrio']['id_departamento'];
+        $lista=Ciudad::model()->findAll('id_departamento=?',array($id));
+        //$lista=CHtml::listData($lista,'id','nombre');
+        
+        foreach($lista as $data){
+            echo "<option value='{$data->id}'>{$data->nombre}</option>";
+        }
+    
+    }
 }

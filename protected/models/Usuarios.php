@@ -14,6 +14,7 @@
  * @property string $email
  * @property integer $celular
  * @property string $foto
+ * @property integer $estado
  * @property string $sesion
  * @property string $fecha_creacion
  *
@@ -51,17 +52,18 @@ class Usuarios extends CActiveRecord
         
         
         return array(
-            array('nick, pass, pin, sesion, fecha_creacion', 'required'),
-            array('pin, celular', 'numerical', 'integerOnly'=>true),
-            array('nick, pass', 'length', 'max'=>20),
+            array('nick, pass, pin, fecha_creacion', 'required'),
+            array('id_empresa, pin, celular, estado', 'numerical', 'integerOnly'=>true),
+            array('nick', 'length', 'max'=>20),
             array('nombre, apellido', 'length', 'max'=>50),
             array('direccion', 'length', 'max'=>200),
             array('email', 'length', 'max'=>100),
+            array('pass', 'length', 'max'=>125),
             array('sesion', 'length', 'max'=>255),
             array('foto', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, nick, pass, pin, nombre, apellido, direccion, email, celular, foto, sesion, fecha_creacion', 'safe', 'on'=>'search'),
+            array('id, id_empresa, nick, pass, pin, nombre, apellido, direccion, email, celular, foto, estado, sesion, fecha_creacion', 'safe', 'on'=>'search'),
         );
 	}
 
@@ -93,8 +95,9 @@ class Usuarios extends CActiveRecord
 //        
         return array(
             'id' => 'ID',
+            'id_empresa' => 'Id Empresa',
             'nick' => 'Nick',
-            'pass' => 'Contraseña',
+            'pass' => 'Pass',
             'pin' => 'Pin',
             'nombre' => 'Nombre',
             'apellido' => 'Apellido',
@@ -102,6 +105,7 @@ class Usuarios extends CActiveRecord
             'email' => 'Email',
             'celular' => 'Celular',
             'foto' => 'Foto',
+            'estado' => 'Estado',
             'sesion' => 'Sesion',
             'fecha_creacion' => 'Fecha Creacion',
         );
@@ -113,18 +117,26 @@ class Usuarios extends CActiveRecord
     */
     public function validatePassword($password)
     {
-        return $this->hashPassword($password,$this->salt)===$this->pass;
+        //return $this->hashPassword($password,$this->salt)===$this->pass;
+        return $this->hashPassword($password)===$this->pass;
     }
-    
     
     /**
     * @param string password
     * @param string salt
     * @return strng hash
     */
-    public function hashPassword($password,$salt)
+    //public function hashPassword($password,$salt)
+    public function hashPassword($password)
     {
-        return sha1($salt.$password);
+        //return md5($salt.$password);
+        return md5($password);
+    }
+    
+    public function beforeSave() {
+        $pass = md5($this->pass);
+        $this->pass = $pass;
+        return true;
     }
     
     /**
@@ -154,6 +166,7 @@ class Usuarios extends CActiveRecord
        $criteria=new CDbCriteria;
 
         $criteria->compare('id',$this->id);
+        $criteria->compare('id_empresa',$this->id_empresa);
         $criteria->compare('nick',$this->nick,true);
         $criteria->compare('pass',$this->pass,true);
         $criteria->compare('pin',$this->pin);
@@ -163,6 +176,7 @@ class Usuarios extends CActiveRecord
         $criteria->compare('email',$this->email,true);
         $criteria->compare('celular',$this->celular);
         $criteria->compare('foto',$this->foto,true);
+        $criteria->compare('estado',$this->estado);
         $criteria->compare('sesion',$this->sesion,true);
         $criteria->compare('fecha_creacion',$this->fecha_creacion,true);
 

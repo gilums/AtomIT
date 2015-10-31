@@ -4,14 +4,10 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form-horizontal" role="form">
-
+<div class="form" role="form">    
 <?php $form=$this->beginWidget('booster.widgets.TbActiveForm', array(
 	'id'=>'usuarios-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
+    'type' => 'horizontal',
 	'enableAjaxValidation'=>false,
     'htmlOptions'=>array(
         'enctype'=>'multipart/form-data'
@@ -35,18 +31,78 @@
 			<?php echo $form->error($model,'nick'); ?>
 		</div>
 	</div>
-
-
-	<div class="form-group">
+    
+    <div class="form-group">
 		<div class="col-lg-2">
 			<?php echo $form->labelEx($model,'pass'); ?>
 		</div>
 		<div class="col-lg-6">
-			<?php echo $form->passwordField($model,'pass',array('size'=>20,'maxlength'=>20)); ?>
+			<?php echo $form->textField($model,'pass',array('size'=>20,'maxlength'=>125)); ?>
 			<?php echo $form->error($model,'pass'); ?>
 		</div>
 	</div>
 	
+	
+    <div class="form-group">
+		<div class="col-lg-2">
+			<?php echo $form->labelEx($model,'pin'); ?>
+		</div>
+		<div class="col-lg-6">	
+			<?php echo $form->textField($model,'pin'); ?>
+			<?php echo $form->error($model,'pin'); ?>
+		</div>
+	</div>
+   
+    <div class="form-group">
+		<div class="col-lg-2">
+			<?php echo $form->labelEx($model,'nombre'); ?>
+		</div>
+		<div class="col-lg-6">	
+			<?php echo $form->textField($model,'nombre',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'nombre'); ?>
+		</div>
+	</div>
+	
+    <div class="form-group">
+		<div class="col-lg-2">
+			<?php echo $form->labelEx($model,'apellido'); ?>
+		</div>
+		<div class="col-lg-6">	
+			<?php echo $form->textField($model,'apellido',array('size'=>50,'maxlength'=>50)); ?>
+			<?php echo $form->error($model,'apellido'); ?>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<div class="col-lg-2">
+			<?php echo $form->labelEx($model,'direccion'); ?>
+		</div>
+		<div class="col-lg-6">	
+			<?php echo $form->textField($model,'direccion',array('size'=>50,'maxlength'=>200)); ?>
+			<?php echo $form->error($model,'direccion'); ?>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-lg-2">
+			<?php echo $form->labelEx($model,'email'); ?>
+		</div>
+		<div class="col-lg-6">	
+			<?php echo $form->textField($model,'email',array('size'=>50,'maxlength'=>100)); ?>
+			<?php echo $form->error($model,'email'); ?>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-2">
+			<?php echo $form->labelEx($model,'celular'); ?>
+		</div>
+		<div class="col-lg-6">	
+			<?php echo $form->textField($model,'celular'); ?>
+			<?php echo $form->error($model,'celular'); ?>
+		</div>
+	</div>
+			
 	<?php echo $form->fileFieldGroup($model, 'foto',
         array(
             'wrapperHtmlOptions' => array(

@@ -2,6 +2,9 @@
 
 class SiteController extends Controller
 {
+
+    
+    
 	/**
 	 * @return array action filters
 	 */
@@ -57,6 +60,39 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		//$this->render('index');
+        
+        //Yii::app()->authManager->createRole('super');
+        //Yii::app()->authManager->createRole('admin');
+        //Yii::app()->authManager->assign('admin',2);
+        
+//        $usu = new Usuarios;
+//        $usu->nick='super';
+//        $usu->pass='supera2014';
+//        $usu->pin=4681;
+//        $usu->nombre='Super';
+//        $usu->apellido='Administrador';
+//        $usu->direccion='Ficticia 1234';
+//        $usu->email='super@dominio.com';
+//        $usu->celular=123456;
+//        //$usu->estado='1';
+//        $usu->sesion='super';
+//        $usu->save();
+        
+        //$model = Usuarios::model()->find('nick="super"');
+        //Yii::app()->authManager->assign('super',$model->id);
+        
+//        $usu2 = new Usuarios;
+//        $usu2->nick='admin';
+//        $usu2->pass='admina2014';
+//        $usu2->pin='4681';
+//        $usu2->nombre='Admin';
+//        $usu2->apellido='Administrador';
+//        $usu2->direccion='Ficticia 1234';
+//        $usu2->email='admin@dominio.com';
+//        $usu2->celular='123456';
+//        $usu2->estado='1';
+//        $usu2->sesion='admin';
+//        $usu2->save();
         
         $model=new Ordenes('search');
 		$model->unsetAttributes();  // clear any default values

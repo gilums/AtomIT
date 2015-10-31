@@ -27,3 +27,7 @@ $this->menu=array(
 		'fecha_creacion',
 	),
 )); ?>
+
+<?php $this->renderPartial("_roles",array('role'=>$role,'model'=>$model)); ?>
+
+

@@ -93,6 +93,16 @@ class Barrio extends CActiveRecord
 		));
 	}
 
+
+	public function getMenuDepartamentos(){
+		$departamentos=Departamento::model()->findAll();
+		return CHtml::listData($departamentos, 'id','nombre');
+	}
+
+	public function getMenuCuidades($defaultDepartamento=1){
+		 return CHtml::listData(Ciudad::model()->findAll('id_departamento=?',array($defaultDepartamento)), 'id','nombre');
+	}
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
