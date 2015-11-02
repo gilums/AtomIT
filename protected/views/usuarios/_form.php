@@ -102,7 +102,22 @@
 			<?php echo $form->error($model,'celular'); ?>
 		</div>
 	</div>
-			
+	
+	<?php if(!$model->isNewRecord){ ?>
+	<div class="form-group">
+		<div class="col-lg-2">
+			<?php echo $form->labelEx($model,'estado'); ?>
+		</div>
+		<div class="col-lg-6">
+			 <div class="material-switch">
+				<?php echo $form->checkBox($model,'estado',array('name'=>'estado')); ?>
+			 	<label for='estado' class="label-danger"></label>
+			 </div>
+			<?php echo $form->error($model,'estado'); ?>
+		</div>
+	</div>
+	<?php } ?>
+
 	<?php echo $form->fileFieldGroup($model, 'foto',
         array(
             'wrapperHtmlOptions' => array(
@@ -111,13 +126,6 @@
         )
     ); ?>
 	
-<!--
-	<div class="row">
-		<?php #echo $form->labelEx($model,'fecha_creacion'); ?>
-		<?php #echo $form->textField($model,'fecha_creacion'); ?>
-		<?php #echo $form->error($model,'fecha_creacion'); ?>
-	</div>
--->
 	<div class="form-group">
 		<div class="col-lg-2">
 			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array('class'=>'btn btn-default')); ?>

@@ -111,7 +111,8 @@ class UsuariosController extends Controller
                 fclose($fp);
                 $model->foto = $content;
             }
-            
+            $model->estado=1;
+            $model->sesion="test";
             
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
@@ -165,7 +166,7 @@ class UsuariosController extends Controller
             else{
                 $model->foto=$foto_ant;
             }
-            
+            $model->sesion="test";
 
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Update";

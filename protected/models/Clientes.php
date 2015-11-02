@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'clientes':
  * @property integer $id
+ * @property integer $id_empresa
  * @property string $nombre
  * @property string $rut
  * @property string $razon_social
@@ -14,6 +15,8 @@
  * @property integer $telefono
  * @property string $agencia
  * @property string $nota
+ * @property integer $id_departamento
+ * @property integer $id_ciudad
  * @property integer $id_barrio
  * @property string $fecha_creacion
  *
@@ -39,16 +42,28 @@ class Clientes extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
+		// return array(
+		// 	array('telefono, id_barrio', 'numerical', 'integerOnly'=>true),
+		// 	array('nombre, razon_social, email, web, agencia', 'length', 'max'=>50),
+		// 	array('rut', 'length', 'max'=>30),
+		// 	array('direccion', 'length', 'max'=>100),
+		// 	array('nota, fecha_creacion', 'safe'),
+		// 	// The following rule is used by search().
+		// 	// @todo Please remove those attributes that should not be searched.
+		// 	array('id, nombre, rut, razon_social, direccion, email, web, telefono, agencia, nota, id_barrio, fecha_creacion', 'safe', 'on'=>'search'),
+		// );
+
 		return array(
-			array('telefono, id_barrio', 'numerical', 'integerOnly'=>true),
-			array('nombre, razon_social, email, web, agencia', 'length', 'max'=>50),
-			array('rut', 'length', 'max'=>30),
-			array('direccion', 'length', 'max'=>100),
-			array('nota, fecha_creacion', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, rut, razon_social, direccion, email, web, telefono, agencia, nota, id_barrio, fecha_creacion', 'safe', 'on'=>'search'),
-		);
+            array('id_departamento, id_ciudad', 'required'),
+            array('id_empresa, telefono, id_departamento, id_ciudad, id_barrio', 'numerical', 'integerOnly'=>true),
+            array('nombre, razon_social, email, web, agencia', 'length', 'max'=>50),
+            array('rut', 'length', 'max'=>30),
+            array('direccion', 'length', 'max'=>100),
+            array('nota, fecha_creacion', 'safe'),
+            // The following rule is used by search().
+            // @todo Please remove those attributes that should not be searched.
+            array('id, id_empresa, nombre, rut, razon_social, direccion, email, web, telefono, agencia, nota, id_departamento, id_ciudad, id_barrio, fecha_creacion', 'safe', 'on'=>'search'),
+        );
 	}
 
 	/**
@@ -69,22 +84,25 @@ class Clientes extends CActiveRecord
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels()
-	{
-		return array(
-			'id' => 'ID',
-			'nombre' => 'Nombre',
-			'rut' => 'Rut',
-			'razon_social' => 'Razon Social',
-			'direccion' => 'Direccion',
-			'email' => 'Email',
-			'web' => 'Web',
-			'telefono' => 'Telefono',
-			'agencia' => 'Agencia',
-			'nota' => 'Nota',
-			'id_barrio' => 'Barrio',
-			'fecha_creacion' => 'Fecha Creacion',
-		);
-	}
+    {
+        return array(
+            'id' => 'ID',
+            'id_empresa' => 'Id Empresa',
+            'nombre' => 'Nombre',
+            'rut' => 'Rut',
+            'razon_social' => 'Razon Social',
+            'direccion' => 'Direccion',
+            'email' => 'Email',
+            'web' => 'Web',
+            'telefono' => 'Telefono',
+            'agencia' => 'Agencia',
+            'nota' => 'Nota',
+            'id_departamento' => 'Id Departamento',
+            'id_ciudad' => 'Id Ciudad',
+            'id_barrio' => 'Id Barrio',
+            'fecha_creacion' => 'Fecha Creacion',
+        );
+    }
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -120,6 +138,19 @@ class Clientes extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function getMenuDepartamentos(){
+		$departamentos=Departamento::model()->findAll();
+		return CHtml::listData($departamentos, 'id','nombre');
+	}
+
+	public function getMenuCuidades($defaultDepartamento=1){
+		 return CHtml::listData(Ciudad::model()->findAll('id_departamento=?',array($defaultDepartamento)), 'id','nombre');
+	}
+
+	public function getMenuBarrios($defaultCiudad=1,$defaultDepartamento=1){
+		 return CHtml::listData(Barrio::model()->findAll('id_ciudad=? AND id_departamento=?',array($defaultCiudad,$defaultDepartamento)), 'id','nombre');
 	}
 
 	/**

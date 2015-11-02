@@ -36,7 +36,7 @@ class ClientesController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','view','index','create','update'),
+				'actions'=>array('admin','delete','view','index','create','update','barriosbyciudad','ciudadbydepartamentos'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -203,4 +203,30 @@ class ClientesController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	public function actionCiudadByDepartamentos(){
+        
+        $id=$_POST['Clientes']['id_departamento'];
+        $lista=Ciudad::model()->findAll('id_departamento=?',array($id));
+        //$lista=CHtml::listData($lista,'id','nombre');
+        
+        foreach($lista as $data){
+            echo "<option value='{$data->id}'>{$data->nombre}</option>";
+        }
+    
+    }
+
+    public function actionBarriosByCiudad(){
+        
+        $id=$_POST['Clientes']['id_departamento'];
+        $id_ciudad=$_POST['Clientes']['id_ciudad'];
+        $lista=Barrio::model()->findAll('id_departamento=? AND id_ciudad=?',array($id,$id_ciudad));
+        //$lista=CHtml::listData($lista,'id','nombre');
+        
+        foreach($lista as $data){
+            echo "<option value='{$data->id}'>{$data->nombre}</option>";
+        }
+    
+    }
+
 }
