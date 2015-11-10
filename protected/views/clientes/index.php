@@ -39,7 +39,7 @@ $('.search-button').click(function(){
 			array('name'=>'razon_social', 'header'=>'Razón Social'),
 /*			array('name'=>'direccion', 'header'=>'Dirección'),*/
 			array('name'=>'email', 'header'=>'E-Mail'),
-            array('name'=>'fecha_creacion', 'header'=>'Fecha creacion'),
+            // array('name'=>'fecha_creacion', 'header'=>'Fecha creacion'),
 			array(
 				'htmlOptions' => array('nowrap'=>'nowrap'),
 				'class'=>'booster.widgets.TbButtonColumn',

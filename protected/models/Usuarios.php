@@ -110,16 +110,21 @@ class Usuarios extends CActiveRecord
             'fecha_creacion' => 'Fecha Creacion',
         );
 	}
+
+    protected function beforeSave() {
+       $this->pass = sha1($this->pass);
+       return parent::beforeSave();
+    }
     
     /**
     * @param string the password to be validated
     * @return boolean whether the password is valid
     */
-    public function validatePassword($password)
-    {
-        //return $this->hashPassword($password,$this->salt)===$this->pass;
-        return $this->hashPassword($password)===$this->pass;
-    }
+    #public function validatePassword($password)
+    #{
+    #    //return $this->hashPassword($password,$this->salt)===$this->pass;
+    #    return $this->hashPassword($password)===$this->pass;
+    #}
     
     /**
     * @param string password
@@ -127,25 +132,25 @@ class Usuarios extends CActiveRecord
     * @return strng hash
     */
     //public function hashPassword($password,$salt)
-    public function hashPassword($password)
-    {
-        //return md5($salt.$password);
-        return md5($password);
-    }
+    #public function hashPassword($password)
+    #{
+    #    //return md5($salt.$password);
+    #    return md5($password);
+    #}
     
-    public function beforeSave() {
-        $pass = md5($this->pass);
-        $this->pass = $pass;
-        return true;
-    }
+    #public function beforeSave() {
+    #    $pass = md5($this->pass);
+    #    $this->pass = $pass;
+    #    return true;
+    #}
     
     /**
     * @return string the salt
     */
-    public function generateSalt()
-    {
-        return uniqid('',true);
-    }
+    #public function generateSalt()
+    #{
+    #    return uniqid('',true);
+    #}
     
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

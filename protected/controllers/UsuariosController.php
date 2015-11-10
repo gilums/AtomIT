@@ -101,7 +101,7 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
 			$model->attributes=$_POST['Usuarios'];
-            $model->pass=md5($model->pass); //Esta es la linea que se debe agregar
+            #$model->pass=md5($model->pass); //Esta es la linea que se debe agregar
             
             if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
             {
@@ -152,9 +152,9 @@ class UsuariosController extends Controller
 		if(isset($_POST['Usuarios']))
 		{
             $foto_ant=$model->foto;
-            $model->pass=md5($model->pass); //Esta es la linea que se debe agregar
+            #$model->pass=md5($model->pass); //Esta es la linea que se debe agregar
 			$model->attributes=$_POST['Usuarios'];
-            $model->pass=$model->hashPassword($_POST['Usuarios']['pass'],$model->generateSalt());
+            #$model->pass=$model->hashPassword($_POST['Usuarios']['pass'],$model->generateSalt());
             if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
             {
                 $file = CUploadedFile::getInstance($model,'foto');
@@ -166,6 +166,11 @@ class UsuariosController extends Controller
             else{
                 $model->foto=$foto_ant;
             }
+            
+            #if(isset($_POST['Usuarios']['pass'])){
+            #    $model->pass = md5($model->pass); //Encriptar en MD5
+            #} 
+
             $model->sesion="test";
 
             $historial->id_usuario=Yii::app()->user->getId();

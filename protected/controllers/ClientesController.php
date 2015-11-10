@@ -220,10 +220,10 @@ class ClientesController extends Controller
         
         $id=$_POST['Clientes']['id_departamento'];
         $id_ciudad=$_POST['Clientes']['id_ciudad'];
-        $lista=Barrio::model()->findAll('id_departamento=? AND id_ciudad=?',array($id,$id_ciudad));
+        $lista2=Barrio::model()->findAll('id_departamento=? AND id_ciudad=?',array($id,$id_ciudad));
         //$lista=CHtml::listData($lista,'id','nombre');
         
-        foreach($lista as $data){
+        foreach($lista2 as $data){
             echo "<option value='{$data->id}'>{$data->nombre}</option>";
         }
     
