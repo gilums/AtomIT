@@ -151,7 +151,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=db_atomit',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '123456',
+			'password' => '',
 			'charset' => 'utf8',
             'enableParamLogging' => true,
             'enableProfiling' => true,

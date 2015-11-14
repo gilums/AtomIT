@@ -63,14 +63,14 @@ class CiudadController extends Controller
 	public function actionCreate()
 	{
 		$model=new Ciudad;
-
+		$historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Ciudad']))
 		{
 			$model->attributes=$_POST['Ciudad'];
-            
+           
             $historial->id_usuario=Yii::app()->user->getId();
 			$historial->tipo="Create";
 			$historial->estilo="Success";
@@ -99,7 +99,7 @@ class CiudadController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+		$historial = new Historial;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 

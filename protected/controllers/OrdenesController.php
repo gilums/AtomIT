@@ -80,9 +80,7 @@ class OrdenesController extends Controller
 		{
 			$equipo->attributes=$_POST['Equipos'];
 			if($equipo->save())
-			{	
-				echo "<script>alert('".$equipo->id."');</script>";
-
+			{
 				/*
 				$sql='select max(id) from equipos;';
 				$connection=Yii::app()->db; 
@@ -109,6 +107,7 @@ class OrdenesController extends Controller
 						$model->fecha_retiro=date('Y-m-d');
 					}
 					if($model->save()){
+						//$this->pdfUpdate($model->id);
                         $historial->save();
                         Yii::app()->user->setFlash('Success', 'Se creo correctamente la orden');
                         $this->redirect(array('site/index'));
@@ -295,8 +294,8 @@ class OrdenesController extends Controller
 
     public function pdfUpdate($id){
     	//system.out.println("id: ".$id);
-    	echo "<script>alert('".$id."');</script>";
-    	$this->debug_to_console('id: '.$id);
+    	//echo "<script>alert('".$id."');</script>";
+    	//$this->debug_to_console('id: '.$id);
         $model=$this->loadModel($id);
         /*$mPDF1 = Yii::app()->ePdf->mpdf();
 

@@ -63,7 +63,7 @@ class SiteController extends Controller
         
         //Yii::app()->authManager->createRole('super');
         //Yii::app()->authManager->createRole('admin');
-        //Yii::app()->authManager->assign('admin',2);
+        //Yii::app()->authManager->assign('admin',1);
         
 //        $usu = new Usuarios;
 //        $usu->nick='super';

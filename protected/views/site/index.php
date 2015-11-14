@@ -20,8 +20,9 @@ $this->pageTitle=Yii::app()->name;
 			array('name'=>'condicion', 'header'=>'Condicion'),
 			array('name'=>'estado', 'header'=>'Estado'),
 /*			array('name'=>'direccion', 'header'=>'Dirección'),*/
-/*			array('name'=>'finalizada', 'header'=>'Finalizada?'),*/
             array('name'=>'id_cliente','value'=>'$data->clientes->nombre','header'=>'Cliente'),
+ /*           array('name'=>'fecha_cierre', 'header'=>'Fecha cierre'),
+            array('name'=>'fecha_retiro', 'header'=>'Fecha retiro'),*/
 			array(
 				'htmlOptions' => array('nowrap'=>'nowrap'),
 				'class'=>'booster.widgets.TbButtonColumn',

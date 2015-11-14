@@ -38,15 +38,14 @@
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/logo6.png"><span>AtomIt</span></a>
+                        <a href="<?php echo Yii::app()->createUrl('/site/index'); ?>" class="site_title"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/logo6.png"><span>AtomIt</span></a>
                     </div>
                     <div class="clearfix"></div>
 
 
                     <div class="profile">
+
                         <div class="profile_pic">
-<!--                            <img src="<?php #echo Yii::app()->request->baseUrl; ?>/img/img.jpg" alt="..." class="profile_pic_img center-block img-circle img-responsive">-->
-                            <!--<img src="data:image/jpeg;base64,<?php #base64_encode(Yii::app()->user->foto); ?>" alt="..." class="profile_pic_img center-block img-circle img-responsive">-->
                             <?php echo CHtml::image(Yii::app()->controller->createUrl('usuarios/loadImage', array('id'=>Yii::app()->user->id)),'',array('class'=>'profile_pic_img center-block img-circle img-responsive')); ?>
                         </div>
                         <div class="profile_info col-md-12 text-center">
@@ -146,7 +145,13 @@
                     <nav class="" role="navigation">
                         <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                            
                         </div>
+                        <div class="nav toggle">
+                            <a href="<?php echo Yii::app()->createUrl('/ordenes/create'); ?>" id="menu_toggle"><i class="fa fa-file-text"></i></a>
+                            <!--<a  class="site_title"><i class="fa "></i></a>-->
+                        </div>
+
                         <ul class="nav navbar-nav navbar-right menu-left">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
