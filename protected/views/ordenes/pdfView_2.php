@@ -229,18 +229,17 @@ font-family: "Dosis", sans-serif;
             <td id="datos-empresa">
                 <table id="tabla3">
                     <tr>
-                        <td>Direccion: Prueba 1234</td>          
+                        <td>Direccion: Julian Laguna 5981</td>          
                     </tr>
                     <tr>
-                         <td>Tel: 099888333</td>
+                         <td>Tel: 095679183</td>
                     </tr>   
                     <tr>   
-                        <td>E-Mail: dalfaro@outlook.com</td>
+                        <td>E-Mail: dalfaro@outlook.es</td>
                     </tr>     
                     <tr>    
-                        <td>Web: www.dar.com</td>
+                        <td>Web: www.darsoluciones.com.uy</td>
                     </tr>  
-
                 </table>
             </td>
             <td id="nro_orden">
@@ -256,7 +255,8 @@ font-family: "Dosis", sans-serif;
                             </tr>
                             <tr>
                                  <td>'.$model->id.'</td>
-                                 <td>'.date("d/m/Y").'</td>
+                                 <!--<td>date("d/m/Y")</td>-->
+                                 <td>'.date('d/m/Y').'</td>
                             </tr>   
                          </table>
                     

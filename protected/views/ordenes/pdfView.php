@@ -10,12 +10,12 @@ $this->widget(
 
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/pdf-orden.css" />
 <div class="col-lg-12">
-    <div class="col-lg-6">
+    <div class="col-lg-7">
         <div class="col-lg-5">
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/darsol.png" class="img-responsive logo-pdf" alt=""></div>
         <div class="col-lg-5">
-        <h4>Direccion: Prueba 1234</h4>
-        <h4>Tel: 099888333</h4>
+        <h4>Direccion: Julian Laguna 5981</h4>
+        <h4>Tel: 095679183</h4>
         <h4>E-Mail: dalfaro@outlook.com</h4>
         <h4>Web: www.dar.com</h4>
         </div>

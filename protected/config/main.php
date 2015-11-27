@@ -11,6 +11,7 @@ return array(
     'language'=>'es',
     'sourceLanguage'=>'en',
     'charset'=>'utf-8',
+    'timeZone'=>'GMT',
 	// preloading 'log' component
 	'preload'=>array('log', 'booster'),
 
@@ -151,7 +152,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=db_atomit',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '123456',
 			'charset' => 'utf8',
             'enableParamLogging' => true,
             'enableProfiling' => true,
