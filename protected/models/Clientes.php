@@ -54,7 +54,7 @@ class Clientes extends CActiveRecord
 		// );
 
 		return array(
-            array('id_departamento, id_ciudad', 'required'),
+            array('id_departamento, id_ciudad, rut', 'required'),
             array('id_empresa, telefono, id_departamento, id_ciudad, id_barrio', 'numerical', 'integerOnly'=>true),
             array('nombre, razon_social, email, web, agencia', 'length', 'max'=>50),
             array('rut', 'length', 'max'=>30),
@@ -89,7 +89,7 @@ class Clientes extends CActiveRecord
             'id' => 'ID',
             'id_empresa' => 'Id Empresa',
             'nombre' => 'Nombre',
-            'rut' => 'Rut',
+            'rut' => 'CI/Rut',
             'razon_social' => 'Razon Social',
             'direccion' => 'Direccion',
             'email' => 'Email',
@@ -149,7 +149,7 @@ class Clientes extends CActiveRecord
 		 return CHtml::listData(Ciudad::model()->findAll('id_departamento=?',array($defaultDepartamento)), 'id','nombre');
 	}
 
-	public function getMenuBarrios($defaultCiudad=1,$defaultDepartamento=1){
+	public function getMenuBarrios($defaultCiudad=0,$defaultDepartamento=0){
 		 return CHtml::listData(Barrio::model()->findAll('id_ciudad=? AND id_departamento=?',array($defaultCiudad,$defaultDepartamento)), 'id','nombre');
 	}
 

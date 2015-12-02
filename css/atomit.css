@@ -15,7 +15,9 @@ body.nav-sm .container.body .right_col {
     margin-left: 70px;
     z-index: 2;
 }
-.right_col{min-height: 700px;}
+.right_col{
+    min-height: 100% !important;
+}
 body.nav-sm .navbar.nav_title {
     width: 70px;
 }
@@ -994,7 +996,7 @@ article.media {
     border-top: 1px solid #999999;
 }
 
-.dropdown-menu:after {
+/*.dropdown-menu:after {
     border-bottom: 6px solid #999999;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -1003,7 +1005,7 @@ article.media {
     right: 6%;
     position: absolute;
     top: -6px;
-}
+}*/
 
 .dropdown-menu>li>a {
     color: #5A738E;
@@ -1695,7 +1697,16 @@ button,
 }
 
 .contenedor_tabs_ordenes{
+    display: table;
+    width: 100%;
     padding-top: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    background: white;
+    border-bottom: 1px solid #dddddd !important;
+    border-right: 1px solid #dddddd !important;
+    border-left: 1px solid #dddddd !important;
 }
 
 /*---------------- SWITCH ---------------------*/
@@ -1745,4 +1756,8 @@ button,
 .material-switch > input[type="checkbox"]:checked + label::after {
     background: inherit;
     left: 20px;
+}
+
+.breadcrumb {
+    padding: 0px 0px !important;
 }
