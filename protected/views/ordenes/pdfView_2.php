@@ -4,7 +4,6 @@ $html='
   .logo-emp{
     width: 250px;
 }
-
 #tabla2{
     font-family: "Dosis", sans-serif;
 /*    border: 1px solid red;*/
@@ -39,7 +38,6 @@ font-family: "Dosis", sans-serif;
 font-family: "Dosis", sans-serif;
     width: 100%;
 }
-
 #tabla4, #tabla4 th, #tabla4 td {
     border: 1px solid #dddddd;
     border-collapse: collapse;
@@ -318,14 +316,7 @@ font-family: "Dosis", sans-serif;
       </table>';
 
 $pdf = new mPDF('utf-8');
-//$pdf = new HTML2PDF();
-/*$mpdf->SetHeader(Yii::app()->name);
-$mpdf->SetFooter('Pie de página');
-$mpdf->SetWatermarkImage("/images/logo.jpg");
-$mpdf ->showWatermarkImage = true;*/
 $pdf->WriteHTML($html);
-//$pdf->pdf->IncludeJS('print(TRUE)');
-//$pdf->pdf->IncludeJS('window.open(this.href, "_blank", "width=300,height=400"); return false;');
 $pdf->Output('Orden.pdf','I');
 exit;
 ?>
