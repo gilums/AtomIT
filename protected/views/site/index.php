@@ -35,3 +35,13 @@ $this->pageTitle=Yii::app()->name;
 
 )); ?>
 
+
+<script type="text/javascript">
+    function lanzarPdf(){
+           //alert(id);
+           var url='<?php echo Yii::app()->createUrl("ordenes/pdfcreate", array('id'=>$model->id)); ?>';
+           window.open(url, "_blank", "width=900,height=700"); 
+           return false;
+    }
+</script>
+

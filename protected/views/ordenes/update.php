@@ -8,15 +8,15 @@
 	'Update',
 );*/
 
-$this->widget(
-    'booster.widgets.TbBreadcrumbs',
-    array(
-        'links' => array('Ordenes' => 'index','update'), 
-    )
-);
+
 
 ?>
 
-<h1>Update Ordenes <?php echo $model->id; ?></h1>
-
+<h1>Orden <?php echo $model->id; ?> </h1>
+<?php $this->widget(
+    'booster.widgets.TbBreadcrumbs',
+    array(
+        'links' => array('Ordenes' => 'index',$model->id), 
+    )
+); ?>
 <?php $this->renderPartial('_form_update', array('model'=>$model)); ?>

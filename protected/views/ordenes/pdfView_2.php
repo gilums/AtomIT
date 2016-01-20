@@ -1,65 +1,9 @@
 <?php 
-    $html2='<link rel="stylesheet" type="text/css" href="'.Yii::app()->request->baseUrl.'/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="'.Yii::app()->request->baseUrl.'/css/pdf-orden.css" />
-
-<div class="col-lg-12">
-    <div class="col-lg-6 borde">
-        
-        <h5>Direccion: Prueba 1234</h5>
-        <h5>Tel: 099888333</h5>
-        <h5>E-Mail: dalfaro@outlook.com</h5>
-        <h5>Web: www.dar.com</h5>
-    </div>
-    <div class="col-md-3 col-md-offset-3 text-center borde">
-        <h1>Service Order</h1>
-        <!--<h2>SO-1000</h2>-->
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>N° Orden</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1000</td>
-                        <td>Mark</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<div class="col-lg-12 contenedor-datos-equipo">
-    <div class="col-lg-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">Datos del equipo</div>
-          <div class="panel-body">
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <td>'.$model->id.'</td>
-                        <td>'.$model->clientes->nombre.'</td>
-                        <td>'.$model->clientes->direccion.'</td>
-                        <td>'.$model->equipo->nro_serie.'</td>
-                    </tr>
-                </tbody>
-            </table>
-          </div>
-        </div>
-    </div>
-    <div class="col-lg-6">
-
-    </div>
-</div>';
-
 $html='
 <style>
   .logo-emp{
     width: 250px;
 }
-
 #tabla2{
     font-family: "Dosis", sans-serif;
 /*    border: 1px solid red;*/
@@ -94,7 +38,6 @@ font-family: "Dosis", sans-serif;
 font-family: "Dosis", sans-serif;
     width: 100%;
 }
-
 #tabla4, #tabla4 th, #tabla4 td {
     border: 1px solid #dddddd;
     border-collapse: collapse;
@@ -104,22 +47,28 @@ font-family: "Dosis", sans-serif;
     text-align: center;    
 }
 
-#datos-cliente-equipo{
-font-family: "Dosis", sans-serif;
+#datos-equipo{
+    font-family: "Dosis", sans-serif;
+    padding-top:10px;
+    width: 100%;
+}
+#datos-cliente{
+    font-family: "Dosis", sans-serif;
     padding-top:10px;
     width: 100%;
 }
 #contenedor-datos-cliente{
-font-family: "Dosis", sans-serif;
-    width: 50%;
+    font-family: "Dosis", sans-serif;
+    width: 100%;
     padding-right: 10px;
 }
 #contenedor-datos-equipo{
-    width: 50%;
+    font-family: "Dosis", sans-serif;
+    width: 100%;
+    padding-right: 10px;
 }
-
 #tabla5{
-font-family: "Dosis", sans-serif;
+    font-family: "Dosis", sans-serif;
     width: 100%;
 }
 
@@ -133,7 +82,7 @@ font-family: "Dosis", sans-serif;
 }
 
 #tabla6{
-font-family: "Dosis", sans-serif;
+    font-family: "Dosis", sans-serif;
     width: 100%;
 }
 
@@ -229,7 +178,7 @@ font-family: "Dosis", sans-serif;
             <td id="datos-empresa">
                 <table id="tabla3">
                     <tr>
-                        <td>Direccion: Julian Laguna 5981</td>          
+                        <td>Dirección: Julian Laguna 5981</td>          
                     </tr>
                     <tr>
                          <td>Tel: 095679183</td>
@@ -264,12 +213,16 @@ font-family: "Dosis", sans-serif;
             </td>           
         </tr>
       </table>
-      <table id="datos-cliente-equipo">
-          <tr >
+      <table id="datos-cliente">
+          <tr>
               <td id="contenedor-datos-cliente">
                  <table id="tabla5">
                     <tr>
                         <th colspan="2" style="border-bottom: 1px solid #dddddd;">Datos del cliente</th>                  
+                    </tr>
+                     <tr>
+                         <td style="width:150px;">RUT</td>
+                         <td>'.$model->clientes->rut.'</td>
                     </tr>
                     <tr>
                          <td>Cuenta</td>
@@ -283,19 +236,23 @@ font-family: "Dosis", sans-serif;
                          <td>Teléfono</td>
                          <td>'.$model->clientes->telefono.'</td>
                     </tr>   
-                    <tr>
+                    <!--<tr>
                          <td>Contacto</td>
                          <td></td>
-                    </tr>    
+                    </tr>-->    
                  </table> 
               </td>
+          </tr>
+      </table>
+      <table id="datos-equipo">
+          <tr>
               <td id="contenedor-datos-equipo">
                   <table id="tabla6">
                     <tr>
                         <th colspan="2" style="border-bottom: 1px solid #dddddd;">Datos del equipo</th>                
                     </tr>
                     <tr>
-                         <td>Tipo</td>
+                         <td style="width:150px;">Tipo</td>
                          <td>'.$model->equipo->tipo.'</td>
                     </tr>
                     <tr>
@@ -316,7 +273,7 @@ font-family: "Dosis", sans-serif;
       </table>
       
       <table id="datos-resolucion">
-          <tr >
+          <tr>
               <td id="contenedor-datos-resolucion">
                  <table id="tabla9">
                     <tr>
@@ -334,10 +291,10 @@ font-family: "Dosis", sans-serif;
               <td id="contenedor-datos-resolucion">
                  <table id="tabla9">
                     <tr>
-                        <th style="border-bottom: 1px solid #dddddd;">Comentarios</th>                  
+                        <th style="border-bottom: 1px solid #dddddd;">Diagnóstico</th>                  
                     </tr>
                     <tr>
-                         <td>'.$model->nota.'</td>
+                         <td>'.$model->diagnostico.'</td>
                     </tr> 
                  </table> 
               </td>
@@ -348,7 +305,7 @@ font-family: "Dosis", sans-serif;
               <td id="contenedor-datos-resolucion">
                  <table id="tabla9">
                     <tr>
-                        <th style="border-bottom: 1px solid #dddddd;">Resolución</th>                  
+                        <th style="border-bottom: 1px solid #dddddd;">Solución</th>                  
                     </tr>
                     <tr>
                          <td>'.$model->solucion.'</td>
@@ -359,14 +316,7 @@ font-family: "Dosis", sans-serif;
       </table>';
 
 $pdf = new mPDF('utf-8');
-//$pdf = new HTML2PDF();
-/*$mpdf->SetHeader(Yii::app()->name);
-$mpdf->SetFooter('Pie de página');
-$mpdf->SetWatermarkImage("/images/logo.jpg");
-$mpdf ->showWatermarkImage = true;*/
 $pdf->WriteHTML($html);
-//$pdf->pdf->IncludeJS('print(TRUE)');
-//$pdf->pdf->IncludeJS('window.open(this.href, "_blank", "width=300,height=400"); return false;');
 $pdf->Output('Orden.pdf','I');
 exit;
 ?>
