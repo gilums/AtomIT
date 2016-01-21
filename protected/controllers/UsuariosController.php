@@ -111,6 +111,7 @@ class UsuariosController extends Controller
                 fclose($fp);
                 $model->foto = $content;
             }
+            
             $model->estado=1;
             $model->sesion="test";
             
