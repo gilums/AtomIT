@@ -15,7 +15,7 @@ class ClientesController extends Controller
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			
 		);
 	}
 
@@ -27,16 +27,16 @@ class ClientesController extends Controller
 	public function accessRules()
 	{
 		return array(
-/*			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('barriosByCiudad','ciudadbydepartamentos'),
 				'users'=>array('*'),
-			),*/
+			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update'),
+				'actions'=>array('index','view','create','update','barriosByCiudad','ciudadbydepartamentos'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','view','index','create','update','barriosbyciudad','ciudadbydepartamentos'),
+				'actions'=>array('admin','delete','view','index','create','update','barriosByCiudad','ciudadbydepartamentos'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -208,23 +208,35 @@ class ClientesController extends Controller
         
         $id=$_POST['Clientes']['id_departamento'];
         $lista=Ciudad::model()->findAll('id_departamento=?',array($id));
-        //$lista=CHtml::listData($lista,'id','nombre');
+        $lista=CHtml::listData($lista,'id','nombre');
         
-        foreach($lista as $data){
-            echo "<option value='{$data->id}'>{$data->nombre}</option>";
+
+        echo CHtml::tag('option',array('value' => ''),'--Seleccione--',true);
+        foreach($lista as $data => $cd)
+        {
+            echo CHtml::tag('option',array('value' => $data),CHtml::encode($cd), true);
         }
+        /*foreach($lista as $data){
+            echo "<option value='{$data->id}'>{$data->nombre}</option>";
+        }*/
     
     }
 
     public function actionBarriosByCiudad(){
         
-        $id=$_POST['Clientes']['id_departamento'];
-        $id_ciudad=$_POST['Clientes']['id_ciudad'];
-        $lista2=Barrio::model()->findAll('id_departamento=? AND id_ciudad=?',array($id,$id_ciudad));
-        //$lista=CHtml::listData($lista,'id','nombre');
+        //$id=$_POST['Clientes']['id_departamento'];
+        $id3=$_POST['Clientes']['id_ciudad'];
+        $lista2=Barrio::model()->findAll('id_ciudad=?',array($id3));
+        $lista2=CHtml::listData($lista2,'id','nombre');
         
-        foreach($lista2 as $data){
+/*        foreach($lista2 as $data){
             echo "<option value='{$data->id}'>{$data->nombre}</option>";
+        }*/
+
+        echo CHtml::tag('option',array('value' => ''),'--Seleccione--',true);
+        foreach($lista2 as $data => $barrio)
+        {
+            echo CHtml::tag('option',array('value' => $data),CHtml::encode($barrio), true);
         }
     
     }

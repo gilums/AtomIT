@@ -12,7 +12,7 @@
  * @property string $direccion
  * @property string $email
  * @property string $web
- * @property integer $telefono
+ * @property string $telefono
  * @property string $agencia
  * @property string $nota
  * @property integer $id_departamento
@@ -55,9 +55,10 @@ class Clientes extends CActiveRecord
 
 		return array(
             array('id_departamento, id_ciudad, rut', 'required'),
-            array('id_empresa, telefono, id_departamento, id_ciudad, id_barrio', 'numerical', 'integerOnly'=>true),
+            array('id_empresa, id_departamento, id_ciudad, id_barrio', 'numerical', 'integerOnly'=>true),
             array('nombre, razon_social, email, web, agencia', 'length', 'max'=>50),
             array('rut', 'length', 'max'=>30),
+            array('telefono', 'length', 'max'=>15),
             array('direccion', 'length', 'max'=>100),
             array('nota, fecha_creacion', 'safe'),
             // The following rule is used by search().
@@ -87,7 +88,7 @@ class Clientes extends CActiveRecord
     {
         return array(
             'id' => 'ID',
-            'id_empresa' => 'Id Empresa',
+            'id_empresa' => 'Empresa',
             'nombre' => 'Nombre',
             'rut' => 'CI/Rut',
             'razon_social' => 'Razon Social',
@@ -97,9 +98,9 @@ class Clientes extends CActiveRecord
             'telefono' => 'Telefono',
             'agencia' => 'Agencia',
             'nota' => 'Nota',
-            'id_departamento' => 'Id Departamento',
-            'id_ciudad' => 'Id Ciudad',
-            'id_barrio' => 'Id Barrio',
+            'id_departamento' => 'Departamento',
+            'id_ciudad' => 'Ciudad',
+            'id_barrio' => 'Barrio',
             'fecha_creacion' => 'Fecha Creacion',
         );
     }
@@ -149,8 +150,8 @@ class Clientes extends CActiveRecord
 		 return CHtml::listData(Ciudad::model()->findAll('id_departamento=?',array($defaultDepartamento)), 'id','nombre');
 	}
 
-	public function getMenuBarrios($defaultCiudad=0,$defaultDepartamento=0){
-		 return CHtml::listData(Barrio::model()->findAll('id_ciudad=? AND id_departamento=?',array($defaultCiudad,$defaultDepartamento)), 'id','nombre');
+	public function getMenuBarrios($defaultCiudad=1){
+		 return CHtml::listData(Barrio::model()->findAll('id_ciudad=?',array($defaultCiudad)), 'id','nombre');
 	}
 
 	/**
