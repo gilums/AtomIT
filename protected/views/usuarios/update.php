@@ -1,21 +1,19 @@
-<?php
-/* @var $this UsuariosController */
-/* @var $model Usuarios */
+<div class="contenedor-titulo-c">
+    <h1>Usuarios <small>/MODIFICAR/<?php echo $model->nick; ?></small></h1>
+    <div class="col-md-6">
+        <?php
+        /* @var $this UsuariosController */
+        /* @var $model Usuarios */
 
-$this->breadcrumbs=array(
-	'Usuarios'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Usuarios', 'url'=>array('index')),
-	array('label'=>'Create Usuarios', 'url'=>array('create')),
-	array('label'=>'View Usuarios', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Usuarios', 'url'=>array('admin')),
-);
-?>
-
-<h1>Modificar: <?php echo $model->nick; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        $this->widget(
+            'booster.widgets.TbBreadcrumbs',
+            array(
+                'links' => array('Usuarios' => 'index',$model->nick,'Modificar'), 
+            )
+        );
+        ?>
+    </div>
+</div>
+<div class="contenedor-cont-vistas">
+    <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

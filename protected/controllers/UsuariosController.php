@@ -36,7 +36,7 @@ class UsuariosController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','create','update','delete','crearPdf','asignarRol'),
+				'actions'=>array('index','view','create','update','delete','crearPdf','asignarRol','auth','createrole','asignarrole'),
 				'users'=>array('admin'),
                 #'roles'=>array('admin'),
 			),
@@ -52,7 +52,7 @@ class UsuariosController extends Controller
 	 */
 	public function actionView($id)
 	{
-        $role=new RoleForm;
+/*        $role=new RoleForm;
         $historial=new Historial;
 
         if(isset($_POST['ajax']) and $_POST['ajax']==='role-form')
@@ -77,15 +77,67 @@ class UsuariosController extends Controller
                 $this->redirect(array('view','id'=>$id));
 
             }
-        }
+        }*/
 
 
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-            'role'=>$role,
+            //'role'=>$role,
 		));
 	}
 
+    public function actionCreateRole()
+    {
+        $role=new RoleForm;
+        $historial=new Historial;
+        
+        if(isset($_POST['ajax']) and $_POST['ajax']==='role-form')
+        {
+            echo CActiveForm::validate($role);
+            Yii::app()->end();
+        }
+
+        if(isset($_POST['RoleForm']))
+        {
+            $role->attributes=$_POST['RoleForm'];
+            $historial->id_usuario=Yii::app()->user->getId();
+            $historial->tipo="Create";
+            $historial->estilo="Success";
+            $historial->descripcion="Creo el rol: " . $role->name;
+            if($role->validate()){
+
+                Yii::app()->authManager->createRole($role->name,$role->description);
+                //Yii::app()->authManager->assign($role->name,$id);
+
+                //Yii::app()->user->setFlash('Success ', 'Se creo correctamente el rol '.$role->name);
+                $this->redirect(array('auth'));
+
+            }
+        }
+
+        $this->render('createrole',array(
+            'role'=>$role,
+        ));
+    }
+
+    public function actionAuth()
+    {
+
+        $this->render('auth');
+    }
+
+    public function actionAsignarRole($id)
+    {
+        if(isset($_POST['ajax']) and $_POST['ajax']==='role-form')
+        {
+            echo CActiveForm::validate($role);
+            Yii::app()->end();
+        }
+
+        $this->render('asignarrole',array(
+            'model'=>$this->loadModel($id),
+        ));
+    }
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -110,6 +162,9 @@ class UsuariosController extends Controller
                 $content = fread($fp, filesize($file->tempName));
                 fclose($fp);
                 $model->foto = $content;
+            }
+            if(!empty($_POST['Usuarios']['pass'])){         
+                $model->pass=sha1($model->pass);
             }
             
             $model->estado=1;
@@ -147,15 +202,34 @@ class UsuariosController extends Controller
 	{
 		$model=$this->loadModel($id);
         $historial= new Historial;
+
+        $pass1=$model->pass;
+        echo "<script>console.log( 'Pass old: " . $pass1 . "' );</script>";
+        $model->pass = null;
+        
+        $role=new RoleForm;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+        if(isset($_POST['ajax']) and $_POST['ajax']==='role-form')
+        {
+            echo CActiveForm::validate($role);
+            Yii::app()->end();
+        }
 
 		if(isset($_POST['Usuarios']))
 		{
             $foto_ant=$model->foto;
-            #$model->pass=md5($model->pass); //Esta es la linea que se debe agregar
+            
 			$model->attributes=$_POST['Usuarios'];
-            #$model->pass=$model->hashPassword($_POST['Usuarios']['pass'],$model->generateSalt());
+            
+            
+            if(!empty($_POST['Usuarios']['pass'])){        
+                $model->pass=sha1($model->pass);
+            }
+            else{
+                $model->pass = $pass1; 
+            }
+
             if(!empty($_FILES['Usuarios']['tmp_name']['foto']))
             {
                 $file = CUploadedFile::getInstance($model,'foto');
@@ -167,10 +241,6 @@ class UsuariosController extends Controller
             else{
                 $model->foto=$foto_ant;
             }
-            
-            #if(isset($_POST['Usuarios']['pass'])){
-            #    $model->pass = md5($model->pass); //Encriptar en MD5
-            #} 
 
             $model->sesion="test";
 
@@ -193,6 +263,7 @@ class UsuariosController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+            'role'=>$role,
 		));
 	}
 
@@ -248,7 +319,7 @@ class UsuariosController extends Controller
         }else
             Yii::app()->authManager->assign($_GET["item"],$id);
 
-        $this->redirect(array("view","id"=>$id));
+        $this->redirect(array("asignarrole","id"=>$id));
     }
 	/*
 	public function actionAdmin()

@@ -52,7 +52,7 @@ class Usuarios extends CActiveRecord
         
         
         return array(
-            array('nick, pass, pin, fecha_creacion', 'required'),
+            array('nick, pass, pin', 'required'),
             array('id_empresa, pin, celular, estado', 'numerical', 'integerOnly'=>true),
             array('nick', 'length', 'max'=>20),
             array('nombre, apellido', 'length', 'max'=>50),
@@ -111,10 +111,10 @@ class Usuarios extends CActiveRecord
         );
 	}
 
-    protected function beforeSave() {
+/*    protected function beforeSave() {
        $this->pass = sha1($this->pass);
        return parent::beforeSave();
-    }
+    }*/
     
     /**
     * @param string the password to be validated

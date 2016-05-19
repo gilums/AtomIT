@@ -33,7 +33,7 @@ class Equipos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_marca', 'required'),
+			array('id_marca, modelo, nro_serie, tipo', 'required'),
 			array('id_marca', 'numerical', 'integerOnly'=>true),
 			array('modelo, nro_serie', 'length', 'max'=>50),
 			array('tipo', 'length', 'max'=>8),

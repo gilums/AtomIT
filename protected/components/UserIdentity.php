@@ -27,8 +27,9 @@ class UserIdentity extends CUserIdentity
 
 		if($user===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($this->password!==$user->pass)
+		#elseif($this->password!==$user->pass)
 		#elseif(sha1($this->password)!==$user->pass)
+		elseif(sha1($this->password)!==$user->pass)
 		#elseif(md5($this->password)!==$user->pass)
 		#elseif(!$this->validatePassword($user->pass))
 		#elseif(!$user->validatePassword($this->password))
@@ -53,5 +54,9 @@ class UserIdentity extends CUserIdentity
 	public function getId()
 	{
 		return $this->_id;
+	}
+
+	public function imp($dato,$id){
+		echo "<script>console.log( '". $id . $dato . "' );</script>";
 	}
 }

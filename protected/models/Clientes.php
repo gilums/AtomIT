@@ -150,9 +150,12 @@ class Clientes extends CActiveRecord
 		 return CHtml::listData(Ciudad::model()->findAll('id_departamento=?',array($defaultDepartamento)), 'id','nombre');
 	}
 
-	public function getMenuBarrios($defaultCiudad=1){
+/*	public function getMenuBarrios($defaultCiudad=1){
 		 return CHtml::listData(Barrio::model()->findAll('id_ciudad=?',array($defaultCiudad)), 'id','nombre');
-	}
+	}*/
+    public function getMenuBarrios($defaultCiudad=0,$defaultDepartamento=0){
+         return CHtml::listData(Barrio::model()->findAll('id_ciudad=? AND id_departamento=?',array($defaultCiudad,$defaultDepartamento)), 'id','nombre');
+    }
 
 	/**
 	 * Returns the static model of the specified AR class.

@@ -15,7 +15,7 @@
 
 	<!-- CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/atomit.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/responsive.css" />
 
@@ -71,6 +71,8 @@
                                         <li><a href="<?php echo Yii::app()->createUrl('/usuarios/index'); ?>">Admin</a>
                                         </li>
                                         <li><a href="<?php echo Yii::app()->createUrl('/usuarios/create'); ?>">Nuevo</a>
+                                        </li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/usuarios/auth'); ?>">Autorizaciones</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -159,7 +161,7 @@
                                     <?php echo Yii::app()->user->name ?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                                <ul class="dropdown-menu dropdown-usermenu wow fadeInDown pull-right" data-wow-duration="0.5s">
                                     <li><a href="<?php echo Yii::app()->createUrl('/usuarios/view',array('id'=>Yii::app()->user->id)); ?>">  Perfil</a></li>
                                     <li>
                                         <a href="<?php echo Yii::app()->createUrl('/usuarios/update',array('id'=>Yii::app()->user->id)); ?>">
@@ -201,8 +203,9 @@
                             )
                         ));
                 ?>
-                
-                <?php echo $content; ?>
+                <div class="datos_container">
+                    <?php echo $content; ?>
+                </div>
             </div>
             <!-- /page content -->
 
@@ -219,6 +222,7 @@
     </div>    
   <?php } ?>
 
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/wow.min.js',CClientScript::POS_END) ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/nicescroll/jquery.nicescroll.min.js',CClientScript::POS_END) ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/bootstrap-notify.js',CClientScript::POS_END) ?>
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/atomit.js',CClientScript::POS_END) ?>

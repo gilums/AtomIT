@@ -142,7 +142,7 @@ if ($model->isNewRecord==false) {
 	<br>
 	<div class="form-group">
 		<div class="col-lg-12">
-			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array('class'=>'btn btn-primary')); ?>
+			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array('class'=>'btn btn-default')); ?>
 		</div>
 	</div>
 

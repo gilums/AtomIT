@@ -7,10 +7,15 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
 	'Login',
 );
+
+$this->widget('ext.ypace.YPace', array(
+    'theme' => 'other' 
+));
+
 ?>
 
 
-<div class="cont-interno-login">
+<div class="cont-interno-login wow fadeIn" data-wow-duration="0.5s" data-wow-delay="2.5s">
 	<div class="col-lg-12 login-titulo">
          <a href="#" class="title"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/logo_login.png"><span>AtomIt</span></a>
 	</div>

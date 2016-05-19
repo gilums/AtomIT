@@ -4,7 +4,8 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form" role="form">    
+
+<div class="forml" role="form">    
 <?php $form=$this->beginWidget('booster.widgets.TbActiveForm', array(
 	'id'=>'clientes-form',
     'type' => 'horizontal',

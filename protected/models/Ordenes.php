@@ -41,7 +41,7 @@ class Ordenes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_equipo', 'required'),
+			array('id_equipo, id_cliente', 'required'),
 			array('id_equipo, finalizada, id_cliente', 'numerical', 'integerOnly'=>true),
 			array('condicion, estado', 'length', 'max'=>19),
 			array('transporte', 'length', 'max'=>9),
@@ -126,6 +126,34 @@ class Ordenes extends CActiveRecord
 		));
 	}
 
+	public function searchb()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria(array(
+            'order'=>'id DESC',
+        ));
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('id_equipo',$this->id_equipo);
+		$criteria->compare('fecha_ingreso',$this->fecha_ingreso,true);
+		$criteria->compare('fecha_cierre',$this->fecha_cierre,true);
+		$criteria->compare('fecha_retiro',$this->fecha_retiro,true);
+		$criteria->compare('falla',$this->falla,true);
+		$criteria->compare('diagnostico',$this->diagnostico,true);
+		$criteria->compare('solucion',$this->solucion,true);
+		$criteria->compare('nota',$this->nota,true);
+		$criteria->compare('condicion',$this->condicion,true);
+		$criteria->compare('estado',$this->estado,true);
+		$criteria->compare('transporte',$this->transporte,true);
+		$criteria->compare('finalizada',$this->finalizada);
+		$criteria->compare('id_cliente',$this->id_cliente);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

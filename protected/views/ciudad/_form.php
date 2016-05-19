@@ -5,7 +5,7 @@
 ?>
 
 
-<div class="form-horizontal" role="form">
+<div class="forml form-horizontal" role="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'ciudad-form',
 	// Please note: When you enable ajax validation, make sure the corresponding

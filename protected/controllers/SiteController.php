@@ -126,6 +126,10 @@ class SiteController extends Controller
 	{
 		$model=new LoginForm;
 
+		if (!Yii::app()->user->isGuest) {
+            $this->redirect(array('index'));
+        }
+
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{

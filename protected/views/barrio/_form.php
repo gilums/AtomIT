@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form-horizontal" role="form">
+<div class="forml form-horizontal" role="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'barrio-form',

@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="forml">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'contactos-form',
