@@ -9,10 +9,11 @@
 <?php $form=$this->beginWidget('booster.widgets.TbActiveForm', array(
 	'id'=>'clientes-form',
     'type' => 'horizontal',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Requeridos<span class="required">*</span></p>
+	
 	<div class="form-group">
 		<div class="col-lg-12">
 			<?php echo $form->errorSummary($model); ?>

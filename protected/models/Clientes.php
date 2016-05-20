@@ -54,7 +54,7 @@ class Clientes extends CActiveRecord
 		// );
 
 		return array(
-            array('id_departamento, id_ciudad, rut', 'required'),
+            array('rut,nombre,email,telefono', 'required'),
             array('id_empresa, id_departamento, id_ciudad, id_barrio', 'numerical', 'integerOnly'=>true),
             array('nombre, razon_social, email, web, agencia', 'length', 'max'=>50),
             array('rut', 'length', 'max'=>30),
@@ -89,7 +89,7 @@ class Clientes extends CActiveRecord
         return array(
             'id' => 'ID',
             'id_empresa' => 'Empresa',
-            'nombre' => 'Nombre',
+            'nombre' => 'Nombre Completo',
             'rut' => 'CI/Rut',
             'razon_social' => 'Razon Social',
             'direccion' => 'Direccion',

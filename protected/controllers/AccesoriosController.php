@@ -36,7 +36,7 @@ class AccesoriosController extends Controller
 				'users'=>array('@'),
 			),*/
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('index','view','create','update','admin','delete'),
+				'actions'=>array('index','create','update','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -49,13 +49,13 @@ class AccesoriosController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+/*	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
-
+*/
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

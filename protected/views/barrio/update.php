@@ -1,21 +1,19 @@
-<?php
-/* @var $this BarrioController */
-/* @var $model Barrio */
+<div class="contenedor-titulo-c">
+    <h1>Barrios <small>/MODIFICAR/<?php echo $model->nombre; ?></small></h1>
+    <div class="col-md-6">
+        <?php
+        /* @var $this AccesoriosController */
+        /* @var $model Accesorios */
+        $this->widget(
+            'booster.widgets.TbBreadcrumbs',
+            array(
+                'links' => array('Barrios' => 'index',$model->nombre,'Modificar'), 
+            )
+        );
 
-$this->breadcrumbs=array(
-	'Barrios'=>array('index'),
-	$model->id=>array('view','id'=>$model->nombre),
-	'Modificar',
-);
-
-$this->menu=array(
-	array('label'=>'List Barrio', 'url'=>array('index')),
-	array('label'=>'Create Barrio', 'url'=>array('create')),
-	array('label'=>'View Barrio', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Barrio', 'url'=>array('admin')),
-);
-?>
-
-<h1>Modificar Barrio - <?php echo $model->nombre; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        ?>
+    </div>
+</div>
+<div class="contenedor-cont-vistas">
+    <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

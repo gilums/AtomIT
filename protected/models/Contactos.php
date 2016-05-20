@@ -32,6 +32,7 @@ class Contactos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('nombre, apellido,telefono,email', 'required'),
 			array('id_cliente', 'numerical', 'integerOnly'=>true),
 			array('nombre, apellido', 'length', 'max'=>30),
 			array('telefono', 'length', 'max'=>15),

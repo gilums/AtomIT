@@ -5,21 +5,33 @@
 ?>
 
 
-<div class="forml form-horizontal" role="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'ciudad-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+<div class="forml" role="form">
+
+<?php $form = $this->beginWidget('booster.widgets.TbActiveForm',
+	array(
+		'id' => 'ciudad-form',
+		'type' => 'horizontal',
+		'enableAjaxValidation'=>true,
+	)
+); 
+
+?>
 
 	<p class="note">Requeridos <span class="required">*</span></p>
 
 	<div class="form-group">
 		<div class="col-lg-12">
 			<?php echo $form->errorSummary($model); ?>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-2">
+			<b>Departamento</b>
+		</div>
+		<div class="col-lg-6">	
+			<?php echo $form->dropDownList($model,'id_departamento', CHtml::listData(Departamento::model()->findAll(), 'id','nombre'), array('class'=>'form-control'));?>
+			<?php echo $form->error($model,'id_departamento'); ?>
 		</div>
 	</div>
 
@@ -35,17 +47,7 @@
 
 	<div class="form-group">
 		<div class="col-lg-2">
-			<b>Departamento</b>
-		</div>
-		<div class="col-lg-6">	
-			<?php echo $form->dropDownList($model,'id_departamento', CHtml::listData(Departamento::model()->findAll(), 'id','nombre'));?>
-			<?php echo $form->error($model,'id_departamento'); ?>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<div class="col-lg-2">
-			<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-default')); ?>
+			<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array('class'=>'btn btn-default')); ?>
 		</div>
 
 	</div>

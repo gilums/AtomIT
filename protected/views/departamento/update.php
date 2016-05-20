@@ -1,21 +1,19 @@
-<?php
-/* @var $this DepartamentoController */
-/* @var $model Departamento */
+<div class="contenedor-titulo-c">
+    <h1>Departamentos <small>/MODIFICAR/<?php echo $model->nombre; ?></small></h1>
+    <div class="col-md-6">
+        <?php
+        /* @var $this DepartamentoController */
+        /* @var $model Departamento */
 
-$this->breadcrumbs=array(
-	'Departamentos'=>array('index'),
-	$model->id=>array('view','id'=>$model->nombre),
-	'Modificar',
-);
-
-$this->menu=array(
-	array('label'=>'List Departamento', 'url'=>array('index')),
-	array('label'=>'Create Departamento', 'url'=>array('create')),
-	array('label'=>'View Departamento', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Departamento', 'url'=>array('admin')),
-);
-?>
-
-<h1>Modificar Departamento - <?php echo $model->nombre; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        $this->widget(
+            'booster.widgets.TbBreadcrumbs',
+            array(
+                'links' => array('Departamentos' => 'index',$model->nombre,'Modificar'), 
+            )
+        );
+        ?>
+    </div>
+</div>
+<div class="contenedor-cont-vistas">
+    <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

@@ -37,26 +37,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'falla'); ?>
-		<?php echo $form->textArea($model,'falla',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'diagnostico'); ?>
-		<?php echo $form->textArea($model,'diagnostico',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'solucion'); ?>
-		<?php echo $form->textArea($model,'solucion',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'nota'); ?>
-		<?php echo $form->textArea($model,'nota',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'condicion'); ?>
 		<?php echo $form->textField($model,'condicion',array('size'=>19,'maxlength'=>19)); ?>
 	</div>

@@ -1,21 +1,19 @@
-<?php
-/* @var $this AccesoriosController */
-/* @var $model Accesorios */
+<div class="contenedor-titulo-c">
+    <h1>Accesorios <small>/MODIFICAR/<?php echo $model->nombre; ?></small></h1>
+    <div class="col-md-6">
+        <?php
+        /* @var $this AccesoriosController */
+        /* @var $model Accesorios */
+        $this->widget(
+            'booster.widgets.TbBreadcrumbs',
+            array(
+                'links' => array('Accesorios' => 'index',$model->nombre,'Modificar'), 
+            )
+        );
 
-$this->breadcrumbs=array(
-	'Accesorioses'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Accesorios', 'url'=>array('index')),
-	array('label'=>'Create Accesorios', 'url'=>array('create')),
-	array('label'=>'View Accesorios', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Accesorios', 'url'=>array('admin')),
-);
-?>
-
-<h1>Update Accesorios <?php echo $model->id; ?></h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+        ?>
+    </div>
+</div>
+<div class="contenedor-cont-vistas">
+    <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

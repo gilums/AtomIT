@@ -47,6 +47,7 @@
     			array(
     				'htmlOptions' => array('nowrap'=>'nowrap'),
     				'class'=>'booster.widgets.TbButtonColumn',
+                    'template'=>'{update} {delete}',
                     'deleteConfirmation'=>'Esta seguro que desea eliminar la ciudad?',
     				'viewButtonUrl'=>'Yii::app()->createUrl("ciudad/view", array("id"=>$data->id))',
     				'updateButtonUrl'=>'Yii::app()->createUrl("ciudad/update", array("id"=>$data->id))',

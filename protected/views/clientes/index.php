@@ -25,6 +25,7 @@
     <div class="text-right">
         <a href="#" class="btn btn-default btn-link-c search-button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
         <a href="<?php echo Yii::app()->createAbsoluteUrl('clientes/create'); ?>" class="btn btn-default btn-link-c"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+        <a href="<?php echo Yii::app()->createAbsoluteUrl('contactos/create');?>" class="btn btn-default btn-link-c"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
         <!--<a href="#" class="btn-link-c "><i class="fa fa-search fa-lg"></i></a>-->
         <!--<a href="<?php #echo Yii::app()->createAbsoluteUrl('clientes/create'); ?>" class="btn-link-c"><i class="fa fa-plus"></i></a>-->
     </div>

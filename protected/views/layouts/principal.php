@@ -147,13 +147,13 @@
                     <nav class="" role="navigation">
                         <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                            
                         </div>
                         <div class="nav toggle">
                             <a href="<?php echo Yii::app()->createUrl('/ordenes/create'); ?>" id="menu_toggle"><i class="fa fa-file-text"></i></a>
-                            <!--<a  class="site_title"><i class="fa "></i></a>-->
                         </div>
-
+                        <div class="nav toggle">
+                            <?php echo CHtml::link('<i class="fa fa-search"></i>','#',array('class'=>'search-button')); ?>
+                        </div>
                         <ul class="nav navbar-nav navbar-right menu-left">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

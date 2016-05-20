@@ -1,19 +1,18 @@
-<?php
-/* @var $this CiudadController */
-/* @var $model Ciudad */
-
-$this->breadcrumbs=array(
-	'Ciudades'=>array('index'),
-	'Crear',
-);
-
-$this->menu=array(
-	array('label'=>'List Ciudad', 'url'=>array('index')),
-	array('label'=>'Manage Ciudad', 'url'=>array('admin')),
-);
-?>
-
-
-<h1>Crear Ciudad</h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="contenedor-titulo-c">
+    <h1>Ciudades <small>/CREAR</small></h1>
+    <div class="col-md-6">
+        <?php
+        /* @var $this CiudadController */
+        /* @var $model Ciudad */
+            $this->widget(
+                    'booster.widgets.TbBreadcrumbs',
+                    array(
+                        'links' => array('Ciudades' => 'index','Crear'), 
+                    )
+            );
+        ?>
+    </div>
+</div>
+<div class="contenedor-cont-vistas">
+    <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

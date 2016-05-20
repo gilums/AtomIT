@@ -12,7 +12,7 @@
  * @property string $apellido
  * @property string $direccion
  * @property string $email
- * @property integer $celular
+ * @property string $celular
  * @property string $foto
  * @property integer $estado
  * @property string $sesion
@@ -53,10 +53,11 @@ class Usuarios extends CActiveRecord
         
         return array(
             array('nick, pass, pin', 'required'),
-            array('id_empresa, pin, celular, estado', 'numerical', 'integerOnly'=>true),
+            array('id_empresa, pin, estado', 'numerical', 'integerOnly'=>true),
             array('nick', 'length', 'max'=>20),
             array('nombre, apellido', 'length', 'max'=>50),
             array('direccion', 'length', 'max'=>200),
+            array('celular', 'length', 'max'=>15),
             array('email', 'length', 'max'=>100),
             array('pass', 'length', 'max'=>125),
             array('sesion', 'length', 'max'=>255),

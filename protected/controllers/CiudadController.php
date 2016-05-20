@@ -36,7 +36,7 @@ class CiudadController extends Controller
 				'users'=>array('@'),
 			),*/
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('delete','index','view','create','update'),
+				'actions'=>array('delete','index','create','update'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -49,12 +49,12 @@ class CiudadController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+/*	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}
+	}*/
 
 	/**
 	 * Creates a new model.
@@ -65,7 +65,7 @@ class CiudadController extends Controller
 		$model=new Ciudad;
 		$historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Ciudad']))
 		{
@@ -101,7 +101,7 @@ class CiudadController extends Controller
 		$model=$this->loadModel($id);
 		$historial = new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Ciudad']))
 		{

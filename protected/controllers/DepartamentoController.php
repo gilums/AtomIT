@@ -36,7 +36,7 @@ class DepartamentoController extends Controller
 				'users'=>array('@'),
 			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','delete'),
+				'actions'=>array('index','create','update','delete'),
 				'users'=>array('admin'),
 			),
 			/*
@@ -54,12 +54,12 @@ class DepartamentoController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+/*	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
-	}
+	}*/
 
 	/**
 	 * Creates a new model.
@@ -104,7 +104,7 @@ class DepartamentoController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-         $historial= new Historial;
+        $historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 

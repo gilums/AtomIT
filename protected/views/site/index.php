@@ -4,7 +4,13 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 <div class="contenedor-cont-vistas">
-    <?php $this->widget('booster.widgets.TbExtendedGridView', array(
+    <div class="search-form">
+        <?php $this->renderPartial('_search',array(
+            'model'=>$model,
+        )); ?>
+    </div><!-- search-->
+    <?php 
+        $this->widget('booster.widgets.TbExtendedGridView', array(
     	'id'=>'ordenes-grid',
     	'type' => 'condensed',
     	'dataProvider'=>$model->searchb(),
@@ -13,12 +19,20 @@ $this->pageTitle=Yii::app()->name;
     	'filter'=>$model,
     	'columns'=>	array(
     			array('name'=>'id', 'header'=>'Nro.', 'htmlOptions'=>array('style'=>'width: 60px')),
-                array('name'=>'id_equipo','value'=>'$data->equipo->marcas->nombre','header'=>'Marca'),
+                array(
+                    'name'=>'id_equipo',
+                    //'filter'=>CHtml::listData(Marcas::model()->findAll(),'id','nombre'),
+                    'value'=>'$data->equipo->marcas->nombre',
+                    'header'=>'Marca'
+                    ),
                 array('name'=>'id_equipo','value'=>'$data->equipo->modelo','header'=>'Modelo'),
     			array('name'=>'id_equipo','value'=>'$data->equipo->tipo','header'=>'Tipo'),
-    			array('name'=>'fecha_ingreso', 'header'=>'Fecha ingreso'),
+    			array('name'=>'fecha_ingreso','header'=>'Fecha ingreso'),
     			array('name'=>'condicion', 'header'=>'Condicion'),
-    			array('name'=>'estado', 'header'=>'Estado'),
+    			array(
+                        'name'=>'estado', 
+                        'header'=>'Estado'
+                     ),
     /*			array('name'=>'direccion', 'header'=>'Dirección'),*/
                 array('name'=>'id_cliente','value'=>'$data->clientes->nombre','header'=>'Cliente'),
      /*           array('name'=>'fecha_cierre', 'header'=>'Fecha cierre'),
@@ -35,6 +49,13 @@ $this->pageTitle=Yii::app()->name;
 
     )); 
 
+/*
+'filter'      => CHtml::dropDownList( 'VwProductsList[group_title]', $model->group_title,
+        CHtml::listData( ProductGroups::model()->findAll( array( 'order' => 'group_title' ) ), 'group_title', 'group_title' ),
+        array( 'empty' => '-' )
+    ),
+ */
+
 $this->widget('ext.ypace.YPace', array(
     'theme' => 'flat-top' 
 ));
@@ -48,5 +69,20 @@ $this->widget('ext.ypace.YPace', array(
            window.open(url, "_blank", "width=900,height=700"); 
            return false;
     }
+
+$(document).ready(function() {
+    
+    $(".search-button").click(function(event) {
+        if ($( ".search-form" ).hasClass( "activar" )) {
+                $('.search-form').removeClass('activar');
+            }
+            else {
+                $('.search-form').addClass('activar');
+                
+            }
+    });
+
+});
+
 </script>
 

@@ -27,7 +27,7 @@ if ($model->isNewRecord==false) {
 	<div class="col-lg-12 ">
 		<div class="col-lg-6 ">
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($equipo,'modelo'); ?>
 				</div>
 				<div class="col-lg-8">	
@@ -36,7 +36,7 @@ if ($model->isNewRecord==false) {
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($equipo,'nro_serie'); ?>
 				</div>
 				<div class="col-lg-8">	
@@ -45,7 +45,7 @@ if ($model->isNewRecord==false) {
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($equipo,'tipo'); ?>
 				</div>
 				<div class="col-lg-8">	
@@ -54,7 +54,7 @@ if ($model->isNewRecord==false) {
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($equipo,'id_marca'); ?>
 				</div>
 				<div class="col-lg-8">
@@ -63,7 +63,7 @@ if ($model->isNewRecord==false) {
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($model,'condicion'); ?>
 				</div>
 				<div class="col-lg-8">
@@ -72,7 +72,7 @@ if ($model->isNewRecord==false) {
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($model,'estado'); ?>
 				</div>
 				<div class="col-lg-8">	
@@ -83,7 +83,7 @@ if ($model->isNewRecord==false) {
 		</div>
 		<div class="col-lg-6">
 				<div class="form-group public_drop">
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						<?php echo $form->labelEx($model,'id_cliente'); ?>
 					</div>
 
@@ -107,7 +107,7 @@ if ($model->isNewRecord==false) {
 				</div>
 			
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($model,'falla'); ?>
 				</div>
 				<div class="col-lg-8">	
@@ -117,7 +117,7 @@ if ($model->isNewRecord==false) {
 			</div>
 		
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($model,'transporte'); ?>
 				</div>
 				<div class="col-lg-8">	
@@ -126,7 +126,7 @@ if ($model->isNewRecord==false) {
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<?php echo $form->labelEx($model,'finalizada'); ?>
 				</div>
 				<div class="col-lg-8">	

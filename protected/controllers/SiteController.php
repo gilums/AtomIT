@@ -93,14 +93,19 @@ class SiteController extends Controller
 //        $usu2->estado='1';
 //        $usu2->sesion='admin';
 //        $usu2->save();
-        
-        $model=new Ordenes('search');
+        $connection=Yii::app()->db;
+		$sql="SELECT estado FROM ordenes";
+		$dataReader=$connection->createCommand($sql)->query();
+		//print_r($dataReader);
+
+        $model=new Ordenes('searchb');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Ordenes']))
 			$model->attributes=$_GET['Ordenes'];
 
 		$this->render('index',array(
 			'model'=>$model,
+			'estado'=>$dataReader,
 		));
         
 	}

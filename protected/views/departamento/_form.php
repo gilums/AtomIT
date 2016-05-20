@@ -4,17 +4,17 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="forml form-horizontal" role="form">
+<div class="forml" role="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'departamento-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+<?php $form = $this->beginWidget('booster.widgets.TbActiveForm',
+	array(
+		'id' => 'departamento-form',
+		'type' => 'horizontal',
+		'enableAjaxValidation'=>true,
+	)
+); 
 
+?>
 	<p class="note">Requeridos <span class="required">*</span></p>
 
 	<div class="form-group">
@@ -33,12 +33,11 @@
 		</div>
 	</div>
 
-	<div class="form-group">
-		<div class="col-lg-12">
-			<div class="modal-footer">		        
-		    	<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array('class'=>'btn btn-primary')); ?>
-		    	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-		    </div>		
+	<div class="col-md-12">
+		<div class="form-group">
+			<div class="col-lg-2">
+				<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar',array('class'=>'btn btn-default')); ?>
+			</div>
 		</div>
 	</div>
 	

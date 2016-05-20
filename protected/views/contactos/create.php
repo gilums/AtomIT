@@ -1,18 +1,19 @@
-<?php
-/* @var $this ContactosController */
-/* @var $model Contactos */
+<div class="contenedor-titulo-c">
+    <h1>Contactos <small>/CREAR</small></h1>
+    <div class="col-md-6">
+        <?php
+        /* @var $this ContactosController */
+        /* @var $model Contactos */
 
-$this->breadcrumbs=array(
-	'Contactoses'=>array('index'),
-	'Create',
-);
-
-$this->menu=array(
-	array('label'=>'List Contactos', 'url'=>array('index')),
-	array('label'=>'Manage Contactos', 'url'=>array('admin')),
-);
-?>
-
-<h1>Create Contactos</h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+            $this->widget(
+                    'booster.widgets.TbBreadcrumbs',
+                    array(
+                        'links' => array('Contactos' => 'index','Crear'), 
+                    )
+            );
+        ?>
+    </div>
+</div>
+<div class="contenedor-cont-vistas">
+    <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>
