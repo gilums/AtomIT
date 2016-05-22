@@ -3,12 +3,12 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
+<div class="search-index">
+    <?php $this->renderPartial('_search',array(
+        'model'=>$model,
+    )); ?>
+</div><!-- search-->
 <div class="contenedor-cont-vistas">
-    <div class="search-form">
-        <?php $this->renderPartial('_search',array(
-            'model'=>$model,
-        )); ?>
-    </div><!-- search-->
     <?php 
         $this->widget('booster.widgets.TbExtendedGridView', array(
     	'id'=>'ordenes-grid',
@@ -16,7 +16,7 @@ $this->pageTitle=Yii::app()->name;
     	'dataProvider'=>$model->searchb(),
         'responsiveTable' => true,
     	'template' => "{items}{pager}",
-    	'filter'=>$model,
+    	//'filter'=>$model,
     	'columns'=>	array(
     			array('name'=>'id', 'header'=>'Nro.', 'htmlOptions'=>array('style'=>'width: 60px')),
                 array(
@@ -72,12 +72,12 @@ $this->widget('ext.ypace.YPace', array(
 
 $(document).ready(function() {
     
-    $(".search-button").click(function(event) {
-        if ($( ".search-form" ).hasClass( "activar" )) {
-                $('.search-form').removeClass('activar');
+    $(".buscador").click(function(event) {
+        if ($( ".search-index" ).hasClass( "activar" )) {
+                $('.search-index').removeClass('activar');
             }
             else {
-                $('.search-form').addClass('activar');
+                $('.search-index').addClass('activar');
                 
             }
     });

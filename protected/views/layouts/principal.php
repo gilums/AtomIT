@@ -152,7 +152,7 @@
                             <a href="<?php echo Yii::app()->createUrl('/ordenes/create'); ?>" id="menu_toggle"><i class="fa fa-file-text"></i></a>
                         </div>
                         <div class="nav toggle">
-                            <?php echo CHtml::link('<i class="fa fa-search"></i>','#',array('class'=>'search-button')); ?>
+                            <?php echo CHtml::link('<i class="fa fa-search"></i>','#',array('class'=>'buscador')); ?>
                         </div>
                         <ul class="nav navbar-nav navbar-right menu-left">
                             <li class="">

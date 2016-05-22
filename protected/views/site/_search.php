@@ -4,67 +4,235 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="wide form">
+<div class="forml cont-buscador-index row">
+<?php $form = $this->beginWidget('booster.widgets.TbActiveForm',
+	array(
+		'action'=>Yii::app()->createUrl($this->route),
+		'id'=>'buscador-id',
+		'type' => 'horizontal',
+		'method'=>'get',
+	)
+); 
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
-)); ?>
+?>
+<div class="col-lg-11">	
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+	<div class="col-lg-4">
+		<?php echo $form->textFieldGroup(
+			$model, 
+			'id',
+			array(
+				'labelOptions' => array('label' => false),
+				'wrapperHtmlOptions' => array(
+					'class' => 'col-lg-12',
+				),
+				)
+			);
+		#echo $form->textField($model,'id',array('class'=>'form-control','placeholder'=>'ID')); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'id_equipo'); ?>
-		<?php echo $form->textField($model,'id_equipo'); ?>
+	<!--<div class="form-group public_drop">
+		<div class="col-lg-12">		
+			<?php /*$this->widget(
+			    'booster.widgets.TbSelect2',
+			    array(
+			    	'model' => $model,
+			        'attribute' => 'id_equipo',
+			        'asDropDownList' => true,
+			        'data' => CHtml::listData(Equipos::model()->findAll(), 'id', 'nro_serie'),
+			        'options' => array(
+			            'placeholder' => 'Equipos',
+			            'width' => '100%',
+			        )
+			       
+			    )
+			); */?>
+		</div>
+	</div>-->
+
+
+		<div class="col-lg-4">	
+			<?php echo $form->typeAheadGroup(
+			    $model,
+			    'id_equipo',
+			    array(
+			        'widgetOptions' => array(
+			            'options'=>array(
+			                'hint' => true,
+			                'highlight' => true,
+			                'minLength' => 1,
+			            ),
+			            'datasets'=>array(
+		            		'source' => CHtml::listData(Equipos::model()->findAll(), 'id', 'nro_serie'),
+		            		),         
+			        ),
+			        'labelOptions' => array(
+			            'label' => false,
+			        ),
+			        'wrapperHtmlOptions' => array(
+							'class' => 'col-lg-12',
+					),
+			    )
+			);?>
+		</div>
+
+		<div class="col-lg-4">
+			<?php echo $form->typeAheadGroup(
+			    $model,
+			    'id_cliente',
+			    array(
+			        'widgetOptions' => array(
+			            'options'=>array(
+			                'hint' => true,
+			                'highlight' => true,
+			                'minLength' => 1,
+			                'placeholder'=>'Clientes',
+			            ),
+			            'datasets'=>array(
+		            		'source' => CHtml::listData(Clientes::model()->findAll(), 'id', 'nombre'),
+		            		),         
+			        ),
+			        'labelOptions' => array(
+			            'label' => false,
+			        ),
+			        'wrapperHtmlOptions' => array(
+							'class' => 'col-lg-12',
+					),
+			    )
+			);?>
+		</div>
+	
+	<div class="col-lg-4">
+		<div class="form-group">
+			<div class="col-lg-12">
+			<?php echo ZHtml::enumDropDownList($model,'condicion',array('class'=>'form-control','empty'=>'Condicion')); ?>
+			</div>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'fecha_ingreso'); ?>
-		<?php echo $form->textField($model,'fecha_ingreso'); ?>
+	<div class="col-lg-4">
+		<div class="form-group">
+			<div class="col-lg-12">	
+				<?php echo ZHtml::enumDropDownList($model,'estado',array('class'=>'form-control','empty'=>'Estado')); ?>
+			</div>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'fecha_cierre'); ?>
-		<?php echo $form->textField($model,'fecha_cierre'); ?>
+	<div class="col-lg-4">
+		<div class="form-group">
+			<div class="col-lg-12">	
+				<?php echo ZHtml::enumDropDownList($model,'transporte',array('class'=>'form-control','empty'=>'Transporte')); ?>
+			</div>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'fecha_retiro'); ?>
-		<?php echo $form->textField($model,'fecha_retiro'); ?>
-	</div>
+		<div class="col-lg-4">	
+			<?php echo $form->datePickerGroup(
+				$model,
+				'fecha_ingreso',
+				array(
+					'widgetOptions' => array(
+						'options' => array(
+							'language' => 'es',
+						),
+					),
+					'wrapperHtmlOptions' => array(
+							'class' => 'col-lg-12',
+					),
+					'placeholder'=>'FECHA INGRESO',
+					'labelOptions' => array('label' => false),
+					//'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+				)
+			); ?>
+		</div>
+	
 
-	<div class="row">
-		<?php echo $form->label($model,'condicion'); ?>
-		<?php echo $form->textField($model,'condicion',array('size'=>19,'maxlength'=>19)); ?>
-	</div>
+	
+		<div class="col-lg-4">	
+			<?php echo $form->datePickerGroup(
+				$model,
+				'fecha_cierre',
+				array(
+					'widgetOptions' => array(
+						'options' => array(
+							'language' => 'es',
+						),
+					),
+					'wrapperHtmlOptions' => array(
+							'class' => 'col-lg-12',
+					),
+					'placeholder'=>'FECHA CIERRE',
+					'labelOptions' => array('label' => false),
+					//'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+				)
+			); ?>
+		</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'estado'); ?>
-		<?php echo $form->textField($model,'estado',array('size'=>19,'maxlength'=>19)); ?>
-	</div>
+		<div class="col-lg-4">	
+			<?php echo $form->datePickerGroup(
+				$model,
+				'fecha_retiro',
+				array(
+					'widgetOptions' => array(
+						'options' => array(
+							'language' => 'es',
+							'format' => 'yyyy-mm-dd',
+		        			'viewformat' => 'mm/dd/yyyy',
+						),
+					),
+					'wrapperHtmlOptions' => array(
+							'class' => 'col-lg-12',
+					),
+					'placeholder'=>'FECHA RETIRO',
+					'labelOptions' => array('label' => false),
+					//'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+				)
+			); ?>
+		</div>
+</div>
+<div class="col-lg-1">
+	<div class="col-lg-12 final">
+		<?php echo $form->switchGroup($model, 'finalizada',
+				array(
+					'widgetOptions' => array(
+						'events'=>array(
+							'switchChange'=>'js:function(event, state) {
+							  console.log(this); // DOM element
+							  console.log(event); // jQuery event
+							  console.log(state); // true | false
+							}'
+						),
+						'options' => array(
+				            'size' => 'mini', //null, 'mini', 'small', 'normal', 'large
+				            'onColor' => 'default', // 'primary', 'info', 'success', 'warning', 'danger', 'default'
+				            'offColor' => 'danger',  // 'primary', 'info', 'success', 'warning', 'danger', 'default'
+				            'indeterminate'=>true,
+				        ),
+					),
+					'labelOptions' => array('class' => 'col-lg-12'),
+					'wrapperHtmlOptions' => array(
+							'class' => 'col-lg-12',
+					),
 
-	<div class="row">
-		<?php echo $form->label($model,'transporte'); ?>
-		<?php echo $form->textField($model,'transporte',array('size'=>9,'maxlength'=>9)); ?>
+				)
+			); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'finalizada'); ?>
-		<?php echo $form->textField($model,'finalizada'); ?>
+	<div class="text-right">
+		<div class="col-lg-12">
+			<?php echo CHtml::submitButton('Buscar',array('class'=>'btn btn-default')); ?>
+		</div>
+		<div class="col-lg-12">
+			<?php echo CHtml::resetButton('Borrar',array('class'=>'btn btn-primary')); ?>
+		</div>
 	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'id_cliente'); ?>
-		<?php echo $form->textField($model,'id_cliente'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
-	</div>
+</div>
 
 <?php $this->endWidget(); ?>
 
 </div><!-- search-form -->
+
+<script type="text/javascript">
+	function refrescar(){
+		$("form#buscador-id").val('');
+	}
+</script>

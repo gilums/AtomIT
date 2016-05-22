@@ -134,7 +134,7 @@ class Ordenes extends CActiveRecord
             'order'=>'id DESC',
         ));
 
-        $criteria->addCondition("finalizada=0");
+        //$criteria->addCondition("finalizada=0");
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('id_equipo',$this->id_equipo);

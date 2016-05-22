@@ -1916,7 +1916,8 @@ button,
     background-color:white;
 }
 .contenedor-cont-vistas{
-    padding:20px;
+    padding-left:20px;
+    padding-right:20px;
 }
 .contenedor-cont-vistas .well{
     background-color:white !important;
@@ -1965,14 +1966,33 @@ button,
 .inputFile .form-group label{
     display:none !important;
 }
-.search-form{
+.search-index{
+    background:white !important;
     display:none;
-    transition: all 0.3s ease !important;
-    -webkit-transition: all 0.3s ease !important;
+    transition: all 0.3s !important;
+    -webkit-transition: all 0.3s !important;
+    padding-bottom:5px;
 
 }
-.search-form.activar{
+.search-index.activar{
     display:block;
-    transition: all 0.3s ease !important;
-    -webkit-transition: all 0.3s ease !important;
+    transition: all 0.3s !important;
+    -webkit-transition: all 0.3s !important;
+}
+
+.search-index .cont-buscador-index{
+    background:white !important;
+    transition: all 0.3s !important;
+    -webkit-transition: all 0.3s !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.search-index .cont-buscador-index form {
+    margin-bottom: 0px;
+}
+
+.final .form-group label{
+    padding:0px !important;
+    text-align:center !important;
 }
