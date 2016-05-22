@@ -40,8 +40,22 @@ $this->pageTitle=Yii::app()->name;
     			array(
     				'htmlOptions' => array('nowrap'=>'nowrap'),
     				'class'=>'booster.widgets.TbButtonColumn',
+                    'template'=>'{print} {update} {delete}',
                     'deleteConfirmation'=>'Esta seguro que desea eliminar el cliente?',
-    				'viewButtonUrl'=>'Yii::app()->createUrl("ordenes/view", array("id"=>$data->id))',
+                    'buttons'=>array(           
+                        'print' => array
+                            (
+                                'label'=>'<i class="glyphicon glyphicon-print"></i>',                    
+                                'url'=>'Yii::app()->createUrl("ordenes/pdfcreate", array("id"=>$data->id))',
+                                'options'=>array(
+                                    'target'=>'_black',
+                                    'title'=>'Imprimir Orden',
+                                ),
+                            ),
+
+                    ),
+                    //'print'=>'Yii::app()->createUrl("ordenes/pdfcreate", array("id"=>$data->id))',
+    				//'viewButtonUrl'=>'Yii::app()->createUrl("ordenes/view", array("id"=>$data->id))',
     				'updateButtonUrl'=>'Yii::app()->createUrl("ordenes/update", array("id"=>$data->id))',
     				'deleteButtonUrl'=>'Yii::app()->createUrl("ordenes/delete", array("id"=>$data->id))',
     			),
