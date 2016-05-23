@@ -104,15 +104,22 @@
 	</div>
 	
 	<?php if(!$model->isNewRecord){ ?>
-	<div class="form-group">
-		<div class="col-lg-4">
-			<?php echo $form->labelEx($model,'estado'); ?>
-		</div>
-		<div class="col-lg-8">	
-			<?php echo $form->checkBox($model,'estado',array('name'=>'estado')); ?>
-			<?php echo $form->error($model,'estado'); ?>
-		</div>
-	</div>
+    <?php echo $form->switchGroup($model, 'estado',
+        array(
+            'widgetOptions' => array(
+                'options' => array(
+                    'size' => 'mini', //null, 'mini', 'small', 'normal', 'large
+                    'onColor' => 'default', // 'primary', 'info', 'success', 'warning', 'danger', 'default'
+                    'offColor' => 'danger',  // 'primary', 'info', 'success', 'warning', 'danger', 'default'
+                ),
+            ),
+            'labelOptions' => array('class' => 'col-lg-4 check-estado'),
+            'wrapperHtmlOptions' => array(
+                    'class' => 'col-lg-6',
+            ),
+
+        )
+    ); ?>
 	<?php } ?>
 </div>	
 <div class="col-md-6">

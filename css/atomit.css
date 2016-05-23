@@ -1996,3 +1996,7 @@ button,
     padding:0px !important;
     text-align:center !important;
 }
+
+.check-estado{
+    text-align:left !important;
+}

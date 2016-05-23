@@ -209,7 +209,8 @@ class UsuariosController extends Controller
         
         $role=new RoleForm;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
+        
         if(isset($_POST['ajax']) and $_POST['ajax']==='role-form')
         {
             echo CActiveForm::validate($role);
@@ -249,7 +250,8 @@ class UsuariosController extends Controller
 			$historial->estilo="Warning";
 			$historial->descripcion="Modifico el usuario: " . $model->nick;
             
-            
+            echo "<script>console.log( 'Estado: " . $model->estado . "' );</script>";
+
 			if($model->save()){
                 $historial->save();
                 Yii::app()->user->setFlash('Info', 'Se modifico correctamente el usuario');

@@ -231,8 +231,3 @@
 
 </div><!-- search-form -->
 
-<script type="text/javascript">
-	function refrescar(){
-		$("form#buscador-id").val('');
-	}
-</script>

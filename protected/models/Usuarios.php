@@ -52,7 +52,7 @@ class Usuarios extends CActiveRecord
         
         
         return array(
-            array('nick, pass, pin', 'required'),
+            array('nick, pass, pin, nombre, apellido', 'required'),
             array('id_empresa, pin, estado', 'numerical', 'integerOnly'=>true),
             array('nick', 'length', 'max'=>20),
             array('nombre, apellido', 'length', 'max'=>50),

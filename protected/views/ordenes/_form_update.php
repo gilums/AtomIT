@@ -110,7 +110,7 @@ if ($model->isNewRecord==false) {
                     <div class="col-lg-12">
                         <div class="form-group">
                         <div class="col-lg-12">
-                            <?php echo CHtml::submitButton('Guardar',array('class'=>'btn btn-primary')); ?>
+                            <?php echo CHtml::submitButton('Guardar',array('class'=>'btn btn-default')); ?>
                             <?php echo CHtml::submitButton('Guardar/Imprimir',array('class'=>'btn btn-primary','onClick'=>'lanzarPdf()')); ?>
                             <!--<?php #echo CHtml::submitButton('Guardar/Imprimir',array('class'=>'btn btn-primary','name'=>'upandimp','id'=>'lanzarPdf')); ?>-->
                         </div>

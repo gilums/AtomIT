@@ -106,6 +106,7 @@ class OrdenesController extends Controller
 					if ($_POST['Ordenes']['transporte']=='Enviado' || $_POST['Ordenes']['transporte']=='Entregado') {
 						$model->fecha_retiro=date('Y-m-d');
 					}
+
 					if($model->save()){
 						//$this->pdfUpdate($model->id);
                         $historial->save();
@@ -139,9 +140,16 @@ class OrdenesController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+        
+        $sine=str_replace('<br/>',"\n",$model->solucion);
+        $model->solucion=$sine;
+
+        $sind=str_replace('<br/>',"\n",$model->diagnostico);
+        $model->diagnostico=$sind;
+
         $historial= new Historial;
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 		
         if(isset($_POST['upandimp']))
 		{
@@ -152,9 +160,14 @@ class OrdenesController extends Controller
 			$historial->estilo="Warning";
 			$historial->descripcion="Modifico la orden: " . $model->id;
 
-			$this->pdfUpdate($model->id);
+            $sol_b = preg_replace("/\n/","<br/>",$model->solucion);
+            $model->solucion = $sol_b;
+
+            $diag_b = preg_replace("/\n/","<br/>",$model->diagnostico);
+            $model->diagnostico = $diag_b;
 
 			if($model->save()){
+                $this->pdfUpdate($model->id);
                 $historial->save();
                 Yii::app()->user->setFlash('Info', 'Se modifico correctamente la orden');
 				$this->redirect(array('site/index'));
@@ -172,6 +185,14 @@ class OrdenesController extends Controller
 			$historial->tipo="Update";
 			$historial->estilo="Warning";
 			$historial->descripcion="Modifico la orden: " . $model->id;
+            
+            //preg_replace(“/<br/>/”,”\n”,$_POST[“comentario”]);
+            //preg_replace("/\n/","&lt;br/&gt;",$_POST["textarea"]);
+            $sol = preg_replace("/\n/","<br/>",$model->solucion);
+            $model->solucion = $sol;
+
+            $diag_b = preg_replace("/\n/","<br/>",$model->diagnostico);
+            $model->diagnostico = $diag_b;
             
 			if($model->save()){
                 $historial->save();
