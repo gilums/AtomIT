@@ -8,7 +8,7 @@ $this->pageTitle=Yii::app()->name;
         'model'=>$model,
     )); ?>
 </div><!-- search-->
-<div class="contenedor-cont-vistas">
+<div class="contenedor-cont-vistas-index">
     <?php 
         $this->widget('booster.widgets.TbExtendedGridView', array(
     	'id'=>'ordenes-grid',

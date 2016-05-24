@@ -68,7 +68,7 @@
                                 <?php if(!Yii::app()->user->isGuest && Yii::app()->user->name=="admin"){ ?>
                                 <li><a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="<?php echo Yii::app()->createUrl('/usuarios/index'); ?>">Admin</a>
+                                        <li><a href="<?php echo Yii::app()->createUrl('/usuarios/index'); ?>">Lista</a>
                                         </li>
                                         <li><a href="<?php echo Yii::app()->createUrl('/usuarios/create'); ?>">Nuevo</a>
                                         </li>
@@ -123,16 +123,16 @@
 
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                        <a href="<?php echo Yii::app()->createUrl('/parametros/index'); ?>" data-toggle="tooltip" data-placement="top" title="Parametros">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </a>
                         <a href="<?php echo Yii::app()->createUrl('/historial/index'); ?>" data-toggle="tooltip" data-placement="top" title="Historial">
                             <span class="fa fa-history" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        <a href="<?php echo Yii::app()->createUrl('/empresa/index'); ?>" data-toggle="tooltip" data-placement="top" title="Empresa">
+                            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
                         </a>
-                        <a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>" data-toggle="tooltip" data-placement="top" title="Logout">
+                        <a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>" data-toggle="tooltip" data-placement="top" title="Cerrar Sesión">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -167,13 +167,13 @@
                                         <a href="<?php echo Yii::app()->createUrl('/usuarios/update',array('id'=>Yii::app()->user->id)); ?>">
                                            <!--  <span class="badge bg-red pull-right">50%</span> -->
                                             <!-- <span>Settings</span> -->
-                                            Settings
+                                            Ajustes
                                         </a>
                                     </li>
 <!--                                     <li>
                                         <a href="javascript:;">Help</a>
                                     </li> -->
-                                    <li><a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
                                 </ul>
                             </li>
 

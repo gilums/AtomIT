@@ -1916,6 +1916,12 @@ button,
     background-color:white;
 }
 .contenedor-cont-vistas{
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:20px;
+}
+.contenedor-cont-vistas-index{
     padding-left:20px;
     padding-right:20px;
 }
