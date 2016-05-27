@@ -15,6 +15,7 @@ $this->pageTitle=Yii::app()->name;
     	'type' => 'condensed',
     	'dataProvider'=>$model->searchb(),
         'responsiveTable' => true,
+        'updateSelector'=>'custom-page-selector',
     	'template' => "{items}{pager}",
     	//'filter'=>$model,
     	'columns'=>	array(
